@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Home = styled.svg`
+export const Contact = styled.svg`
   color: #f29c6b;
-  padding-right: 1em;
+  padding: 10px;
 `;

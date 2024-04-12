@@ -5,10 +5,13 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 10vh;
+  position: fixed;
+  width: 100%;
 `;
 
 export const Left = styled.div`
-  padding-left: 1em;
+  padding-left: 5%;
 `;
 
 export const Middle = styled.div`
@@ -16,5 +19,5 @@ export const Middle = styled.div`
 `;
 
 export const Right = styled.div`
-  padding-right: 1em;
+  padding-right: 5%;
 `;
