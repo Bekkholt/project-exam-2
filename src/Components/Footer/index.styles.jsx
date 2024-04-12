@@ -7,6 +7,7 @@ export const Footer = styled.div`
   min-height: 10vh;
   padding-left: 5%;
   padding-right: 5%;
+  padding-top: 0.5%;
 `;
 
 export const Text = styled.p`
