@@ -6,6 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
+  background-image: url(/public/patrick-robert-doyle-AH8zKXqFITA-unsplash-min.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+  background-color: #17262594;
 }
 
 code {
@@ -16,7 +22,7 @@ code {
 .logo {
   font-family: "Cairo Play", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   font-variation-settings: "slnt" 0;
 }
