@@ -9,9 +9,9 @@ body {
   background-image: url(/public/patrick-robert-doyle-AH8zKXqFITA-unsplash-min.jpg);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
   background-blend-mode: color-burn;
   background-color: #17262594;
+  background-repeat: repeat;
 }
 
 code {
