@@ -26,6 +26,7 @@ export const Title = styled.h2`
 
 export const VenueImage = styled.img`
   width: 100%;
+  border-radius: 1em;
 `;
 
 export const VenueDescription = styled.p`
