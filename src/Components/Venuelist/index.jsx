@@ -3,7 +3,7 @@ import FetchAPI from "../../Hooks/API";
 import * as S from "./index.styles";
 
 export default function VenueList() {
-  const { venues } = FetchAPI("https://v2.api.noroff.dev/holidaze/venues");
+  const { venues } = FetchAPI("https://v2.api.noroff.dev/holidaze/");
   <FetchAPI />;
   return (
     <S.ProductWrapper>
