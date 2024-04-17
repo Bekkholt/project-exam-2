@@ -11,7 +11,7 @@ body {
   background-size: cover;
   background-blend-mode: color-burn;
   background-color: #17262594;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
 }
 
 code {
