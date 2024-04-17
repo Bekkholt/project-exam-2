@@ -64,9 +64,11 @@ export default function Venuepage() {
         {<Pets />}
         {<Wifi />}
         <S.Price className="text">${venueDetails.price}/night</S.Price>
-        <Link to="/">
-          <S.BackButton className="header">Login to book</S.BackButton>
-        </Link>
+        <S.ButtonDiv>
+          <Link to="/">
+            <S.BackButton className="header">Login to book</S.BackButton>
+          </Link>
+        </S.ButtonDiv>
       </S.CardDiv>
     </S.Wrapper>
   );

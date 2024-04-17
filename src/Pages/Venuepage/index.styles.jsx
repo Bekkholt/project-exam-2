@@ -11,7 +11,7 @@ export const CardDiv = styled.div`
   opacity: 90%;
   width: 70vh;
   padding: 2%;
-  margin-top: 5%;
+  margin: 5%;
   border-radius: 1em;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
 `;
@@ -44,6 +44,13 @@ export const VenueMeta = styled.p`
 
 export const Price = styled.p`
   color: #f29c6b;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const ButtonDiv = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 export const BackButton = styled.button`
