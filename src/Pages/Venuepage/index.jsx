@@ -1,6 +1,7 @@
 import * as S from "./index.styles";
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import MyBookingCalendar from "../../Components/Calendar";
 
 export default function Venuepage() {
   const [venueDetails, setVenueDetails] = useState(null);
@@ -63,6 +64,7 @@ export default function Venuepage() {
         {<Parking />}
         {<Pets />}
         {<Wifi />}
+        <MyBookingCalendar />
         <S.Price className="text">${venueDetails.price}/night</S.Price>
         <S.ButtonDiv>
           <Link to="/">
