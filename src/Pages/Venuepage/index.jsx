@@ -54,17 +54,21 @@ export default function Venuepage() {
           <S.VenueDescription>{venueDetails.description}</S.VenueDescription>
         </S.TopCard>
         <S.VenueTitle className="header">{venueDetails.name}</S.VenueTitle>
-        <S.VenueAdress className="text">
-          {venueDetails.location.address}
-        </S.VenueAdress>
-        <S.VenueAdress className="text">
-          {venueDetails.location.city}, {venueDetails.location.country}
-        </S.VenueAdress>
-        {<Breakfast />}
-        {<Parking />}
-        {<Pets />}
-        {<Wifi />}
-        <MyBookingCalendar />
+        <S.Middlediv>
+          <div>
+            <S.VenueAdress className="text">
+              {venueDetails.location.address}
+            </S.VenueAdress>
+            <S.VenueAdress className="text">
+              {venueDetails.location.city}, {venueDetails.location.country}
+            </S.VenueAdress>
+            {<Breakfast />}
+            {<Parking />}
+            {<Pets />}
+            {<Wifi />}
+          </div>
+          <MyBookingCalendar />
+        </S.Middlediv>
         <S.Price className="text">${venueDetails.price}/night</S.Price>
         <S.ButtonDiv>
           <Link to="/">

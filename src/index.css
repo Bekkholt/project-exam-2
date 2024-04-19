@@ -44,3 +44,32 @@ code {
 a {
   text-decoration: none;
 }
+
+.calendar__calendar-container {
+  background-color: #17262594 !important;
+  height: 10% !important;
+  width: 50% !important;
+  span {
+    color: #f29c6b !important;
+  }
+}
+
+.calendar__dayCell-content,
+.calendar__dayCell-header,
+.calendar__weekCell {
+  color: #d9b6a3 !important;
+}
+
+.calendar__dayCell-selected,
+.calendar__dayCell-selectedStart,
+.calendar__dayCell-selectedEnd {
+  background-color: #f6813e !important;
+  border: #f29c6b !important;
+}
+
+.calendar__month-arrowBack,
+.calendar__month-arrowNext {
+  path {
+    fill: #f29c6b !important;
+  }
+}

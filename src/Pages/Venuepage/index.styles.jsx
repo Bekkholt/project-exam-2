@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 10%;
+  margin: 5%;
 `;
 
 export const CardDiv = styled.div`
@@ -38,6 +38,12 @@ export const VenueAdress = styled.p`
   color: #f29c6b;
 `;
 
+export const Middlediv = styled.div`
+  display: flex;
+  margin-top: 3vh;
+  justify-content: space-between;
+`;
+
 export const VenueMeta = styled.p`
   color: #f29c6b;
 `;
@@ -46,6 +52,7 @@ export const Price = styled.p`
   color: #f29c6b;
   display: flex;
   justify-content: flex-end;
+  margin-top: 3vh;
 `;
 
 export const ButtonDiv = styled.div`
