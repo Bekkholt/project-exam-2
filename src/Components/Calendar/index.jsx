@@ -32,7 +32,7 @@ const MyBookingCalendar = () => {
     <Calendar
       disabled={(date, state) => !state.isSameMonth}
       reserved={reserved}
-      variant="events"
+      variant="booking"
       dateFnsOptions={{ weekStartsOn: 1 }}
       range={true}
       classNamePrefix="calendar"
