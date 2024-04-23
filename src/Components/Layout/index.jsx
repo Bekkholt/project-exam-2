@@ -5,6 +5,7 @@ import Header from "../Header";
 import HomePage from "../../Pages/Homepage";
 import Homeicon from "../Icons/Home";
 import Venuepage from "../../Pages/Venuepage";
+import CreateAccountPage from "../../Pages/Createaccountpage";
 
 export default function Layout() {
   return (
@@ -14,6 +15,10 @@ export default function Layout() {
         <Route index element={<HomePage />} />
         <Route index element={<Homeicon />} />
         <Route path="/Pages/Venuepage/:id" element={<Venuepage />} />
+        <Route
+          path="/Pages/Createaccountpage"
+          element={<CreateAccountPage />}
+        />
       </Routes>
       <S.Body />
       <Footer />

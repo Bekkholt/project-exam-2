@@ -22,7 +22,7 @@ export default function Header() {
         <Link to="/">
           <Calendaricon />
         </Link>
-        <Link to="/">
+        <Link to="../../Pages/Createaccountpage">
           <Loginicon />
         </Link>
       </S.Right>
