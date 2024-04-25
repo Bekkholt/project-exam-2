@@ -73,3 +73,31 @@ a {
     fill: #f29c6b !important;
   }
 }
+
+.css-13cymwt-control,
+.css-1f43avz-a11yText-A11yText,
+.css-b62m3t-container {
+  background-color: #d9b6a3 !important;
+  border-radius: 1em;
+}
+
+.css-1dimb5e-singleValue,
+.css-1fdsijx-ValueContainer,
+.css-t3ipsp-control,
+.css-1nmdiq5-menu {
+  background-color: #d9b6a3 !important;
+
+  input {
+    background-color: #d9b6a3 !important;
+  }
+}
+
+.css-1hb7zxy-IndicatorsContainer,
+.css-1u9des2-indicatorSeparator {
+  path {
+    color: #172625;
+  }
+  span {
+    background-color: #172625;
+  }
+}
