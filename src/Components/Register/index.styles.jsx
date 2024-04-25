@@ -6,7 +6,7 @@ export const OuterDiv = styled.div`
 `;
 
 export const CreateAccountDiv = styled.div`
-  background-color: #172625;
+  background-color: #172625d8;
   margin-top: 10%;
   border-radius: 1em;
   display: flex;
