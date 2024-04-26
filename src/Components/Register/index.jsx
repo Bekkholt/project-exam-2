@@ -50,16 +50,15 @@ export default function CreateAccount() {
     try {
       const errors = await schema.validate(formData);
       console.log({ errors });
-      console.log("PASSED VALIDATION", e);
 
-      const postBody = {
+      const Details = {
         name: formData.name,
         email: formData.email,
         password: formData.password,
         venueManager: formData.venueManager,
       };
 
-      console.log(JSON.stringify(postBody));
+      console.log(JSON.stringify(Details));
 
       const data = {
         method: "POST",
@@ -124,15 +123,15 @@ export default function CreateAccount() {
                 );
               }}
             />
+            <S.ButtonDiv>
+              <S.Button className="text" type="submit">
+                Create account
+              </S.Button>
+              <Link to="../../Pages/Loginpage">
+                <S.Button className="text">Back to login</S.Button>
+              </Link>
+            </S.ButtonDiv>
           </S.SelectDiv>
-          <div>
-            <S.Button className="text" type="submit">
-              Create account
-            </S.Button>
-            <Link to="../../Pages/Loginpage">
-              <S.Button className="text">Back to login</S.Button>
-            </Link>
-          </div>
         </S.RegisterDetails>
       </S.CreateAccountDiv>
     </S.OuterDiv>

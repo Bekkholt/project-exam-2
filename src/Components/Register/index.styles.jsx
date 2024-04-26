@@ -52,11 +52,9 @@ export const InsertPassword = styled.input`
 `;
 
 export const SelectDiv = styled.div`
-  margin: 10%;
-  width: 100%;
+  margin-top: 10%;
   display: flex;
-  align-self: center;
-  justify-content: center;
+  flex-direction: column;
 `;
 
 export const Text = styled.p`
@@ -76,9 +74,15 @@ export const Button = styled.button`
   height: 3rem;
   cursor: pointer;
   font-weight: bold;
-  margin: 5%;
+  margin-top: 10%;
 
   :hover {
     background-color: #f6813e;
   }
+`;
+
+export const ButtonDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 `;
