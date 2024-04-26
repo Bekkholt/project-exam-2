@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import * as S from "./index.styles";
 import Select from "react-select";
+import { Link } from "react-router-dom";
 
 const URL = "https://v2.api.noroff.dev/auth/register";
 
@@ -124,9 +125,14 @@ export default function CreateAccount() {
               }}
             />
           </S.SelectDiv>
-          <S.Button className="text" type="submit">
-            Create account
-          </S.Button>
+          <div>
+            <S.Button className="text" type="submit">
+              Create account
+            </S.Button>
+            <Link to="../../Pages/Loginpage">
+              <S.Button className="text">Back to login</S.Button>
+            </Link>
+          </div>
         </S.RegisterDetails>
       </S.CreateAccountDiv>
     </S.OuterDiv>
