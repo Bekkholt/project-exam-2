@@ -45,7 +45,9 @@ export const InsertPassword = styled.input`
 
 export const Text = styled.p`
   color: #f29c6b;
-  margin: 2px;
+  display: flex;
+  margin-bottom: 1px;
+  justify-content: center;
 `;
 
 export const Button = styled.button`
@@ -61,6 +63,7 @@ export const Button = styled.button`
   height: 3rem;
   cursor: pointer;
   font-weight: bold;
+  margin: 5%;
 
   :hover {
     background-color: #f6813e;
