@@ -19,7 +19,7 @@ export default function Header() {
         </Link>
       </S.Middle>
       <S.Right>
-        <Link to="/">
+        <Link to="../../Pages/Profilepagecustomer">
           <Calendaricon />
         </Link>
         <Link to="../../Pages/Loginpage">
