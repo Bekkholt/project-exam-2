@@ -5,7 +5,7 @@ import * as S from "./index.styles";
 export default function Venues(venue) {
   function Image() {
     if (venue?.image[0]?.url === undefined) {
-      return <S.Title>No image</S.Title>;
+      return <S.VenueDescription> No image</S.VenueDescription>;
     } else {
       return <S.VenueImage src={venue.image[0].url} />;
     }
