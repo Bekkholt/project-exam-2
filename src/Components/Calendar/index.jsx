@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Calendar from "@demark-pro/react-booking-calendar";
 
-const MyBookingCalendar = () => {
+const MyBookingCalendar = ({ setChosenDates }) => {
   const [bookingDetails, setBookingDetails] = useState();
   let { id } = useParams();
 
   const [selectedDates, setSelectedDates] = useState([]);
-  const handleChange = (e) => setSelectedDates(e);
+  const handleChange = (e) => {
+    setSelectedDates(e);
+    setChosenDates(e);
+  };
 
   useEffect(() => {
     async function getData(url) {
