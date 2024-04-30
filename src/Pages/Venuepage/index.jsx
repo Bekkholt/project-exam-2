@@ -43,6 +43,26 @@ export default function Venuepage() {
       return <S.VenueMeta className="text">Wifi</S.VenueMeta>;
   }
 
+  function handleSubmit(data) {
+    console.log(data);
+  }
+
+  function BackButton() {
+    if (localStorage.getItem("accessToken") !== null) {
+      return (
+        <S.BackButton type="submit" className="header" onSubmit={handleSubmit}>
+          Book chosen dates
+        </S.BackButton>
+      );
+    } else {
+      return (
+        <Link to={"../Loginpage"}>
+          <S.BackButton className="header">Login to book</S.BackButton>
+        </Link>
+      );
+    }
+  }
+
   return (
     <S.Wrapper>
       <S.CardDiv>
@@ -70,11 +90,7 @@ export default function Venuepage() {
           <MyBookingCalendar />
         </S.Middlediv>
         <S.Price className="text">${venueDetails.price}/night</S.Price>
-        <S.ButtonDiv>
-          <Link to="/">
-            <S.BackButton className="header">Login to book</S.BackButton>
-          </Link>
-        </S.ButtonDiv>
+        <S.ButtonDiv>{BackButton()}</S.ButtonDiv>
       </S.CardDiv>
     </S.Wrapper>
   );
