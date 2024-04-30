@@ -6,6 +6,9 @@ const MyBookingCalendar = () => {
   const [bookingDetails, setBookingDetails] = useState();
   let { id } = useParams();
 
+  const [selectedDates, setSelectedDates] = useState([]);
+  const handleChange = (e) => setSelectedDates(e);
+
   useEffect(() => {
     async function getData(url) {
       try {
@@ -30,6 +33,9 @@ const MyBookingCalendar = () => {
 
   return (
     <Calendar
+      selected={selectedDates}
+      onChange={handleChange}
+      onOverbook={(e, err) => alert(err)}
       disabled={(date, state) => !state.isSameMonth}
       reserved={reserved}
       variant="booking"
