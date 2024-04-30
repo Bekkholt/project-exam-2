@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import * as S from "./index.styles";
 
 const URL = "https://v2.api.noroff.dev/auth/login";
+const APIkeyUrl = "https://v2.api.noroff.dev/auth/create-api-key";
 
 export default function Login() {
   const [email] = useState();
@@ -33,7 +34,24 @@ export default function Login() {
       localStorage.setItem("name", json.data.name);
       console.log(json);
       if (response.status === 200) {
-        navigate("/");
+        const APIKeyData = {
+          method: "POST",
+          headers: {
+            "Content-type": "appliation/json",
+            Authorization: `Bearer ${json.data.accessToken}`,
+          },
+          body: JSON.stringify({ name: "The key" }),
+        };
+        console.log(json.data.accessToken);
+        console.log(APIKeyData);
+        const APIKeyResponse = await fetch(APIkeyUrl, APIKeyData);
+        console.log(APIKeyResponse);
+        const APIjson = await APIKeyResponse.json();
+        console.log(APIjson);
+        if (APIKeyResponse.status === 201) {
+          localStorage.setItem("key", APIjson.data.key);
+          navigate("/");
+        }
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
