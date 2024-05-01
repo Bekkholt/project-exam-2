@@ -19,7 +19,6 @@ export default function ProfilePageCustomer() {
         return (
           <S.ProfileDiv key={booking.id}>
             <S.Title>{booking.venue.name}</S.Title>
-            <S.VenueImage>{booking.venue.media.url}</S.VenueImage>
             <S.Text>{booking.dateFrom}</S.Text>
             <S.Text>{booking.dateTo}</S.Text>
           </S.ProfileDiv>
