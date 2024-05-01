@@ -1,10 +1,10 @@
 import Venues from "../Venues";
-import FetchAPI from "../../Hooks/API";
 import * as S from "./index.styles";
+import FetchVenues from "../../Hooks/VenueAPI/index";
 
 export default function VenueList() {
-  const { venues } = FetchAPI("https://v2.api.noroff.dev/holidaze/");
-  <FetchAPI />;
+  const { venues } = FetchVenues("https://v2.api.noroff.dev/holidaze/");
+  <FetchVenues />;
   return (
     <S.ProductWrapper>
       {venues.map((venue) => (
