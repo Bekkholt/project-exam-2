@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const url = "https://v2.api.noroff.dev/holidaze/venues/";
 
-export default function FetchAPI() {
+export default function FetchVenues() {
   const [venues, setVenues] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
