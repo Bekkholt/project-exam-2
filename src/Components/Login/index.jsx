@@ -37,7 +37,7 @@ export default function Login() {
         const APIKeyData = {
           method: "POST",
           headers: {
-            "Content-type": "appliation/json",
+            "Content-type": "application/json",
             Authorization: `Bearer ${json.data.accessToken}`,
           },
           body: JSON.stringify({ name: "The key" }),
