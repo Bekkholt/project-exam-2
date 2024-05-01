@@ -1,13 +1,13 @@
 import * as S from "./index.styles";
-import FetchAPI from "../../Hooks/API";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import FetchVenues from "../../Hooks/VenueAPI";
 
 export default function Searchbar() {
   const [SearchInput, setSearchInput] = useState("");
   const [SearchResults, setSearchResults] = useState("");
-  const { venues } = FetchAPI("https://v2.api.noroff.dev/holidaze/venues/");
+  const { venues } = FetchVenues("https://v2.api.noroff.dev/holidaze/venues/");
 
   useEffect(() => {
     if (SearchInput.trim() === "") {
