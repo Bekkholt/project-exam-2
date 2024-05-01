@@ -52,8 +52,8 @@ export default function Venuepage() {
     console.log(chosenDates);
 
     const inputs = {
-      fromDate: chosenDates[0],
-      toDate: chosenDates[1],
+      dateFrom: chosenDates[0],
+      dateTo: chosenDates[1],
       venueId: id,
       guests: 1,
     };
@@ -74,13 +74,8 @@ export default function Venuepage() {
       console.log(response);
       const json = await response.json();
       console.log(json);
-      if (response.status === 200) {
-        alert(
-          `You have booked these dates:` +
-            json.bookings.dateFrom +
-            ` to ` +
-            json.bookings.dateTo
-        );
+      if (response.status === 201) {
+        alert(`You have booked your chosen dates`);
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
