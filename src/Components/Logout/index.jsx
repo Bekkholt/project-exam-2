@@ -15,15 +15,10 @@ export default function Logout() {
     }
   }
   return (
-    <S.OuterDiv>
-      <S.ProfileDiv>
-        <S.ProfileDetails onSubmit={userLogout}>
-          <S.Title>My profile</S.Title>
-          <S.Button type="submit" className="text">
-            Logout
-          </S.Button>
-        </S.ProfileDetails>
-      </S.ProfileDiv>
-    </S.OuterDiv>
+    <S.ProfileDetails onSubmit={userLogout}>
+      <S.Button type="submit" className="text">
+        Logout
+      </S.Button>
+    </S.ProfileDetails>
   );
 }
