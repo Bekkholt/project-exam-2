@@ -28,7 +28,6 @@ export const VenueRating = styled.p`
 
 export const Title = styled.h1`
   color: #f29c6b;
-  padding-left: 5%;
 `;
 
 export const VenueImage = styled.img`
@@ -71,7 +70,7 @@ export const Insert = styled.input`
   height: 23px;
   max-width: 30vh;
   border-radius: 0.5rem;
-  margin-top: 10%;
+  margin-top: 3%;
 `;
 
 export const DescriptionInsert = styled.input`
