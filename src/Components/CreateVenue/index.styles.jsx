@@ -61,6 +61,7 @@ export const TopCard = styled.div`
 
 export const BottomCard = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 3%;
 `;
@@ -71,4 +72,17 @@ export const Insert = styled.input`
   max-width: 30vh;
   border-radius: 0.5rem;
   margin-top: 10%;
+`;
+
+export const DescriptionInsert = styled.input`
+  background-color: #d9b6a3;
+  height: 23px;
+  max-width: 30vh;
+  border-radius: 0.5rem;
+  margin-top: 10%;
+`;
+
+export const CheckboxDiv = styled.div`
+  display: flex;
+  align-items: center;
 `;
