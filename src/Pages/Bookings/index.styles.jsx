@@ -5,6 +5,7 @@ export const ProductWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   padding: 2%;
+  margin-top: 20%;
 `;
 
 export const OuterDiv = styled.div`
@@ -71,6 +72,7 @@ export const Button = styled.button`
   width: 10rem;
   height: 3rem;
   cursor: pointer;
+  margin: 2%;
 
   :hover {
     background-color: #f6813e;

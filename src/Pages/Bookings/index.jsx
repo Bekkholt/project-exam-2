@@ -4,12 +4,28 @@ import { Link } from "react-router-dom";
 import * as S from "./index.styles";
 
 const name = localStorage.getItem("name");
+// const token = localStorage.getItem("accessToken");
 
-export default function ProfilePageCustomer() {
+export default function Bookings() {
   const bookings = FetchMyBookings(
     "https://v2.api.noroff.dev/holidaze/profiles/" + name + "?_bookings=true"
   );
   console.log(bookings);
+
+  if (bookings.isError === true) {
+    return (
+      <S.ProductWrapper>
+        <S.VenueCard>
+          <S.VenueDescription>
+            You have to log in to see your bookings
+          </S.VenueDescription>
+          <Link to="../../Pages/Loginpage">
+            <S.Button className="header">Go to login</S.Button>
+          </Link>
+        </S.VenueCard>
+      </S.ProductWrapper>
+    );
+  }
 
   if (bookings.bookings.length === 0) return <></>;
   if (bookings.isLoading === true) return <></>;
@@ -26,19 +42,19 @@ export default function ProfilePageCustomer() {
               <S.Title className="header">{booking.venue.name}</S.Title>
               <S.VenueDescription className="text">
                 {booking.venue.location.city}, {booking.venue.location.country}
-                <S.VenueDescription>
-                  {booking.venue.description}
-                </S.VenueDescription>
+              </S.VenueDescription>
+              <S.VenueDescription>
+                {booking.venue.description}
               </S.VenueDescription>
               <S.VenueDescription className="text">
                 Booked dates:{" "}
-                <S.VenueDescription className="text">
-                  {booking.dateFrom}{" "}
-                </S.VenueDescription>{" "}
-                <S.VenueDescription className="text"> to </S.VenueDescription>{" "}
-                <S.VenueDescription className="text">
-                  {booking.dateTo}
-                </S.VenueDescription>
+              </S.VenueDescription>
+              <S.VenueDescription className="text">
+                {booking.dateFrom}{" "}
+              </S.VenueDescription>{" "}
+              <S.VenueDescription className="text"> to </S.VenueDescription>{" "}
+              <S.VenueDescription className="text">
+                {booking.dateTo}
               </S.VenueDescription>
               <S.BottomCard>
                 <S.VenuePrice className="text">
