@@ -3,15 +3,27 @@ import FetchMyBookings from "../../Hooks/MyBookingsAPI";
 import { Link } from "react-router-dom";
 import * as S from "./index.styles";
 
-const name = localStorage.getItem("name");
-
 export default function Bookings() {
-  const bookings = FetchMyBookings(
-    "https://v2.api.noroff.dev/holidaze/profiles/" + name + "?_bookings=true"
-  );
-  console.log(bookings);
-  if (bookings.isLoading === true) return <></>;
+  const isLoggedOut = !localStorage.getItem("accessToken");
+  if (isLoggedOut) {
+    return (
+      <S.ProductWrapper>
+        <S.VenueCard>
+          <S.VenueDescription>
+            You have to log in to see your bookings
+          </S.VenueDescription>
+          <Link to="../../Pages/Loginpage">
+            <S.Button className="header">Go to login</S.Button>
+          </Link>
+        </S.VenueCard>
+      </S.ProductWrapper>
+    );
+  }
 
+  const name = localStorage.getItem("name");
+  const url = `https://v2.api.noroff.dev/holidaze/profiles/${name}?_bookings=true`;
+  const bookings = FetchMyBookings(url);
+  if (bookings.isLoading === true) return <></>;
   if (bookings.isError === true) {
     return (
       <S.ProductWrapper>

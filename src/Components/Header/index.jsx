@@ -5,10 +5,9 @@ import Loginicon from "../Icons/Profile/Login";
 import { Link } from "react-router-dom";
 import * as S from "./index.styles";
 
-const token = localStorage.getItem("accessToken");
-
 function LoggedIn() {
-  if (token !== undefined) {
+  const token = localStorage.getItem("accessToken");
+  if (token) {
     return (
       <Link to="../../Pages/Profilepage">
         <Loginicon />
