@@ -1,4 +1,5 @@
 import Logout from "../../Components/Logout";
+import { Link } from "react-router-dom";
 import * as S from "./index.styles";
 
 export default function ProfilePage() {
@@ -13,7 +14,9 @@ export default function ProfilePage() {
             </S.VenueDescription>
           </S.TopCard>
           <S.VenueTitle className="header">Profile name</S.VenueTitle>
-          <S.BackButton className="text">Add venue</S.BackButton>
+          <Link to={"../../Pages/Createvenuepage"}>
+            <S.BackButton className="text">Add venue</S.BackButton>
+          </Link>
           <S.ButtonDiv>
             <Logout />
           </S.ButtonDiv>
