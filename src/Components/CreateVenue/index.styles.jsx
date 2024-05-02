@@ -20,6 +20,12 @@ export const VenueCard = styled.div`
   }
 `;
 
+export const InsertDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const VenueRating = styled.p`
   color: #f29c6b;
 `;
@@ -64,6 +70,30 @@ export const TopCard = styled.div`
 
 export const BottomCard = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 3%;
+`;
+
+export const InsertName = styled.input`
+  background-color: #d9b6a3;
+  height: 23px;
+  max-width: 30vh;
+  border-radius: 0.5rem;
+  margin-top: 10%;
+`;
+
+export const InsertEmail = styled.input`
+  background-color: #d9b6a3;
+  height: 23px;
+  max-width: 30vh;
+  border-radius: 0.5rem;
+  margin-top: 10%;
+`;
+
+export const InsertPassword = styled.input`
+  background-color: #d9b6a3;
+  height: 23px;
+  max-width: 30vh;
+  border-radius: 0.5rem;
+  margin-top: 10%;
 `;
