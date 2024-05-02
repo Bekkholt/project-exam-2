@@ -10,7 +10,7 @@ export default function ProfilePage() {
           <S.TopCard>
             <S.VenueImage></S.VenueImage>
             <S.VenueDescription>
-              <S.BackButton className="text">Upload avatar</S.BackButton>
+              <S.BackButton className="text">Update avatar</S.BackButton>
             </S.VenueDescription>
           </S.TopCard>
           <S.VenueTitle className="header">Profile name</S.VenueTitle>
