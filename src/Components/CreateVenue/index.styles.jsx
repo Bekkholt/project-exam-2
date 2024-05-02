@@ -13,10 +13,6 @@ export const VenueCard = styled.div`
   margin-top: 5%;
   border-radius: 1em;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
-
-  :hover {
-    background-color: #294745;
-    cursor: pointer;
   }
 `;
 
@@ -57,11 +53,6 @@ export const Button = styled.button`
   }
 `;
 
-export const VenuePrice = styled.p`
-  font-size: large;
-  color: #f29c6b;
-`;
-
 export const TopCard = styled.div`
   display: flex;
   padding: 3%;
@@ -74,23 +65,7 @@ export const BottomCard = styled.div`
   padding: 3%;
 `;
 
-export const InsertName = styled.input`
-  background-color: #d9b6a3;
-  height: 23px;
-  max-width: 30vh;
-  border-radius: 0.5rem;
-  margin-top: 10%;
-`;
-
-export const InsertEmail = styled.input`
-  background-color: #d9b6a3;
-  height: 23px;
-  max-width: 30vh;
-  border-radius: 0.5rem;
-  margin-top: 10%;
-`;
-
-export const InsertPassword = styled.input`
+export const Insert = styled.input`
   background-color: #d9b6a3;
   height: 23px;
   max-width: 30vh;
