@@ -10,6 +10,7 @@ import LoginPage from "../../Pages/Loginpage";
 import Bookings from "../../Pages/Bookings";
 import ProfilePage from "../../Pages/Profilepage";
 import CreateVenuePage from "../../Pages/Createvenuepage";
+import UpdateVenuePage from "../../Pages/Updatevenuepage";
 
 export default function Layout() {
   return (
@@ -22,6 +23,7 @@ export default function Layout() {
         <Route path="/Pages/Loginpage" element={<LoginPage />} />
         <Route path="/Pages/Profilepage" element={<ProfilePage />} />
         <Route path="/Pages/Createvenuepage" element={<CreateVenuePage />} />
+        <Route path="/Pages/Updatevenuepage" element={<UpdateVenuePage />} />
         <Route path="/Pages/Bookings" element={<Bookings />} />
         <Route
           path="/Pages/Createaccountpage"
