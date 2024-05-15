@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   margin: 10%;
 `;
 
-export const VenueCard = styled.div`
+export const VenueCard = styled.form`
   background-color: #172625;
   width: 55vh;
   margin: 2%;
