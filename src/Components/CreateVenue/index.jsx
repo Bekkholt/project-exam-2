@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import * as S from "./index.styles";
+import { Link } from "react-router-dom";
 
 const URL = "https://v2.api.noroff.dev/holidaze/venues";
 
@@ -151,7 +152,9 @@ export default function CreateVenue() {
             <S.Button className="header" type="submit">
               Publish venue
             </S.Button>
-            <S.Button className="header">Go back</S.Button>
+            <Link to={"../../Pages/Profilepage"}>
+              <S.Button className="header">Go back</S.Button>
+            </Link>
           </S.InsertDiv>
         </S.BottomCard>
       </S.VenueCard>
