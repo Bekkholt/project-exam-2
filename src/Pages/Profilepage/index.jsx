@@ -17,9 +17,6 @@ export default function ProfilePage() {
           <Link to={"../../Pages/Createvenuepage"}>
             <S.BackButton className="text">Add venue</S.BackButton>
           </Link>
-          <Link to={"../../Pages/Updatevenuepage"}>
-            <S.BackButton className="text">Update venue</S.BackButton>
-          </Link>
           <S.ButtonDiv>
             <Logout />
           </S.ButtonDiv>

@@ -37,6 +37,7 @@ export const Title = styled.h1`
   color: #f29c6b;
   display: flex;
   justify-content: center;
+  margin-top: 10%;
 `;
 
 export const Text = styled.p`
@@ -47,7 +48,7 @@ export const VenueCard = styled.div`
   background-color: #172625;
   width: 55vh;
   margin: 2%;
-  margin-top: 5%;
+  margin-top: 2%;
   border-radius: 1em;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
 

@@ -40,6 +40,7 @@ export default function Bookings() {
   } else {
     return (
       <S.OuterDiv>
+        <S.Title className="header">My bookings</S.Title>
         {bookings.bookings.map((booking) => {
           return (
             <S.VenueCard key={booking.id}>
@@ -74,6 +75,12 @@ export default function Bookings() {
             </S.VenueCard>
           );
         })}
+        <S.Title className="header">My venues</S.Title>
+        <S.VenueCard>
+          <Link to={"../../Pages/Updatevenuepage"}>
+            <S.Button className="text">Update venue</S.Button>
+          </Link>
+        </S.VenueCard>
         <Logout />
       </S.OuterDiv>
     );

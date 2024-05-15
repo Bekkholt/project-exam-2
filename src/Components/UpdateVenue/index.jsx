@@ -1,6 +1,8 @@
 import * as S from "./index.styles";
 import { Link } from "react-router-dom";
 
+const URL = "https://v2.api.noroff.dev/holidaze/venues/${id}";
+
 export default function UpdateVenue() {
   return (
     <S.Wrapper>
@@ -42,7 +44,7 @@ export default function UpdateVenue() {
           <S.InsertDiv>
             <S.Button className="header">Update venue</S.Button>
             <S.Button className="header">Delete venue</S.Button>
-            <Link to={"../../Pages/Profilepage"}>
+            <Link to={"../../Pages/Bookings"}>
               <S.Button className="header">Go back</S.Button>
             </Link>
           </S.InsertDiv>
