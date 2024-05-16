@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function FetchMyVenue() {
-  const [venue, setVenue] = useState([]);
+  const [venue, setVenue] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   let { id } = useParams();
@@ -37,8 +37,6 @@ export default function FetchMyVenue() {
     getData(`https://v2.api.noroff.dev/holidaze/venues/" + ${id}
 `);
   }, [id]);
-
-  console.log(FetchMyVenue);
 
   return { venue, id, isLoading, isError };
 }

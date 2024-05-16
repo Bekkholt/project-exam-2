@@ -1,42 +1,50 @@
 import * as S from "./index.styles";
-import { Link } from "react-router-dom";
-
-const URL = "https://v2.api.noroff.dev/holidaze/venues/${id}";
+import { Link, useParams } from "react-router-dom";
+import FetchMyVenue from "../../Hooks/SpecificVenueAPI";
 
 export default function UpdateVenue() {
+  let { id } = useParams();
+  const venuesUrl = `https://v2.api.noroff.dev/holidaze/venues/${id}`;
+  const venue = FetchMyVenue(venuesUrl);
+
+  if (!venue.venue) return <></>;
+
   return (
     <S.Wrapper>
-      <S.VenueCard>
+      <S.VenueCard key={venue.venue.id}>
         <S.TopCard>
           <S.Title className="header">Update venue</S.Title>
         </S.TopCard>
         <S.InsertDiv>
-          <S.Insert placeholder="Image url" type="url" />
-          <S.Insert placeholder="Venue name*" />
-          <S.Insert placeholder="Address" />
-          <S.Insert placeholder="City" />
-          <S.Insert placeholder="Zip" />
-          <S.Insert placeholder="Country" />
-          <S.DescriptionInsert placeholder="Description*" type="text" />
-          <S.Insert placeholder="Price pr/night*" type="number" />
-          <S.Insert placeholder="Max guests*" type="number" />
+          <S.Insert placeholder={venue.venue.media[0].url} type="url" />
+          <S.Insert placeholder={venue.venue.name} />
+          <S.Insert placeholder={venue.venue.location.address} />
+          <S.Insert placeholder={venue.venue.location.city} />
+          <S.Insert placeholder={venue.venue.location.zip} />
+          <S.Insert placeholder={venue.venue.location.country} />
+          <S.DescriptionInsert
+            placeholder={venue.venue.description}
+            type="text"
+          />
+          <S.Insert placeholder={venue.venue.price} type="number" />
+          <S.Insert placeholder={venue.venue.maxGuests} type="number" />
         </S.InsertDiv>
         <S.VenueDescription className="text"></S.VenueDescription>
         <S.InsertDiv>
           <S.CheckboxDiv>
-            <S.Insert type="checkbox" />
+            <S.Insert type="checkbox" checked={venue.venue.meta.wifi} />
             <S.VenueDescription>Wifi</S.VenueDescription>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
-            <S.Insert type="checkbox" />
+            <S.Insert type="checkbox" checked={venue.venue.meta.parking} />
             <S.VenueDescription>Parking</S.VenueDescription>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
-            <S.Insert type="checkbox" />
+            <S.Insert type="checkbox" checked={venue.venue.meta.breakfast} />
             <S.VenueDescription>Breakfast</S.VenueDescription>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
-            <S.Insert type="checkbox" />
+            <S.Insert type="checkbox" checked={venue.venue.meta.pets} />
             <S.VenueDescription>Pets</S.VenueDescription>
           </S.CheckboxDiv>
         </S.InsertDiv>
