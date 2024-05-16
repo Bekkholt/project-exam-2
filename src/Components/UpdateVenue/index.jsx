@@ -32,19 +32,25 @@ export default function UpdateVenue() {
         <S.VenueDescription className="text"></S.VenueDescription>
         <S.InsertDiv>
           <S.CheckboxDiv>
-            <S.Insert type="checkbox" checked={venue.venue.meta.wifi} />
+            <S.Insert type="checkbox" defaultChecked={venue.venue.meta.wifi} />
             <S.VenueDescription>Wifi</S.VenueDescription>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
-            <S.Insert type="checkbox" checked={venue.venue.meta.parking} />
+            <S.Insert
+              type="checkbox"
+              defaultChecked={venue.venue.meta.parking}
+            />
             <S.VenueDescription>Parking</S.VenueDescription>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
-            <S.Insert type="checkbox" checked={venue.venue.meta.breakfast} />
+            <S.Insert
+              type="checkbox"
+              defaultChecked={venue.venue.meta.breakfast}
+            />
             <S.VenueDescription>Breakfast</S.VenueDescription>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
-            <S.Insert type="checkbox" checked={venue.venue.meta.pets} />
+            <S.Insert type="checkbox" defaultChecked={venue.venue.meta.pets} />
             <S.VenueDescription>Pets</S.VenueDescription>
           </S.CheckboxDiv>
         </S.InsertDiv>
