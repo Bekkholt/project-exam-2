@@ -98,7 +98,7 @@ export default function Bookings() {
                   </S.VenuePrice>
                 </S.BottomCard>
               </Link>
-              <Link to={"../../Pages/Updatevenuepage"}>
+              <Link to={`../../Pages/Updatevenuepage/${venue.id}`}>
                 <S.Button className="text">Update venue</S.Button>
               </Link>
             </S.VenueCard>

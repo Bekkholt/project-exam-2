@@ -23,7 +23,10 @@ export default function Layout() {
         <Route path="/Pages/Loginpage" element={<LoginPage />} />
         <Route path="/Pages/Profilepage" element={<ProfilePage />} />
         <Route path="/Pages/Createvenuepage" element={<CreateVenuePage />} />
-        <Route path="/Pages/Updatevenuepage" element={<UpdateVenuePage />} />
+        <Route
+          path="/Pages/Updatevenuepage/:id"
+          element={<UpdateVenuePage />}
+        />
         <Route path="/Pages/Bookings" element={<Bookings />} />
         <Route
           path="/Pages/Createaccountpage"
