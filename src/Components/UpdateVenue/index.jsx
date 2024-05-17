@@ -102,6 +102,31 @@ export default function UpdateVenue() {
     }
   }
 
+  async function deleteVenue() {
+    try {
+      const AccessToken = localStorage.getItem("accessToken");
+      const Key = localStorage.getItem("key");
+
+      const data = {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${AccessToken}`,
+          "X-Noroff-API-Key": Key,
+        },
+      };
+      const response = await fetch(venuesUrl, data);
+
+      if (response.status === 200) {
+        alert(`Venue deleted`);
+      } else {
+        alert(`Something went wrong. Statuscode: ` + response.status);
+      }
+    } catch (error) {
+      return error;
+    }
+  }
+
   if (!venue.venue) return <></>;
 
   return (
@@ -201,7 +226,9 @@ export default function UpdateVenue() {
             <S.Button className="header" type="submit">
               Update venue
             </S.Button>
-            <S.Button className="header">Delete venue</S.Button>
+            <S.Button className="header" onClick={deleteVenue}>
+              Delete venue
+            </S.Button>
             <Link to={"../../Pages/Bookings"}>
               <S.Button className="header">Go back</S.Button>
             </Link>
