@@ -1,22 +1,22 @@
 import Homeicon from "../Icons/Home";
 import Logo from "../Logo";
 import Calendaricon from "../Icons/Calendar";
-import Loginicon from "../Icons/Profile/Login";
 import { Link } from "react-router-dom";
 import * as S from "./index.styles";
+import Profileicon from "../Icons/Profile/Login";
 
 function LoggedIn() {
   const token = localStorage.getItem("accessToken");
   if (token) {
     return (
       <Link to="../../Pages/Profilepage">
-        <Loginicon />
+        <Profileicon />
       </Link>
     );
   } else {
     return (
       <Link to="../../Pages/Loginpage">
-        <Loginicon />
+        <Profileicon />
       </Link>
     );
   }
