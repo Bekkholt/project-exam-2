@@ -4,10 +4,16 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FetchVenues from "../../Hooks/VenueAPI";
 
+const sortBy = "created";
+const limit = 20;
+let offset = 0;
+
 export default function Searchbar() {
   const [SearchInput, setSearchInput] = useState("");
   const [SearchResults, setSearchResults] = useState("");
-  const { venues } = FetchVenues("https://v2.api.noroff.dev/holidaze/venues/");
+  const { venues } = FetchVenues(
+    `https://v2.api.noroff.dev/holidaze/venues/?sort=${sortBy}&limit=${limit}&offset=${offset}`
+  );
 
   useEffect(() => {
     if (SearchInput.trim() === "") {

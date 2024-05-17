@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
-const url = "https://v2.api.noroff.dev/holidaze/venues/";
-
-export default function FetchVenues() {
+export default function FetchVenues(url) {
   const [venues, setVenues] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -23,7 +21,7 @@ export default function FetchVenues() {
       }
     }
     getData();
-  }, []);
+  }, [url]);
 
   return { venues, isLoading, isError };
 }
