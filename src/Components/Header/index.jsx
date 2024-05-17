@@ -3,7 +3,7 @@ import Logo from "../Logo";
 import Calendaricon from "../Icons/Calendar";
 import { Link } from "react-router-dom";
 import * as S from "./index.styles";
-import Profileicon from "../Icons/Profile/Login";
+import Profileicon from "../Icons/Profile";
 
 function LoggedIn() {
   const token = localStorage.getItem("accessToken");
