@@ -1,5 +1,5 @@
 import * as S from "./index.styles";
-import { Link, redirect, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import FetchMyVenue from "../../Hooks/SpecificVenueAPI";
 import React from "react";
 import { useForm } from "react-hook-form";
