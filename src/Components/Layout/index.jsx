@@ -11,6 +11,7 @@ import Bookings from "../../Pages/Bookings";
 import ProfilePage from "../../Pages/Profilepage";
 import CreateVenuePage from "../../Pages/Createvenuepage";
 import UpdateVenuePage from "../../Pages/Updatevenuepage";
+import UpdateProfilePage from "../../Pages/Updateprofilepage";
 
 export default function Layout() {
   return (
@@ -31,6 +32,10 @@ export default function Layout() {
         <Route
           path="/Pages/Createaccountpage"
           element={<CreateAccountPage />}
+        />
+        <Route
+          path="/Pages/Updateprofilepage"
+          element={<UpdateProfilePage />}
         />
       </Routes>
       <S.Body />
