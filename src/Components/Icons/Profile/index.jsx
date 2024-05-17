@@ -1,5 +1,4 @@
-import * as S from "./Login/index.styles";
-
+import * as S from "./index.styles";
 export default function Profileicon() {
   return (
     <S.Profile
