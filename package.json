@@ -1,6 +1,6 @@
 {
   "name": "my-first-app",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "private": true,
   "dependencies": {
     "@demark-pro/react-booking-calendar": "^3.0.5",
