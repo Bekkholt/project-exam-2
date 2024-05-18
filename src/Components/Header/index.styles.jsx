@@ -7,7 +7,11 @@ export const Header = styled.div`
   justify-content: space-between;
   min-height: 10vh;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 88px;
+  z-index: 10;
   box-shadow: 0 -6px 10px 10px rgba(0, 0, 0, 10);
 `;
 
