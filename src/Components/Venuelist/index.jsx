@@ -1,25 +1,49 @@
 import Venues from "../Venues";
 import * as S from "./index.styles";
 import FetchVenues from "../../Hooks/VenueAPI/index";
+import { BounceLoader } from "react-spinners";
 
 const sortBy = "created";
 const limit = 20;
 let offset = 0;
+const allVenues = [];
+let lastOffset = -1;
 
 export default function VenueList() {
-  const { venues } = FetchVenues(
+  const { venues, isLoading } = FetchVenues(
     `https://v2.api.noroff.dev/holidaze/venues/?sort=${sortBy}&limit=${limit}&offset=${offset}`
   );
-
   function onClick(e) {
     offset += limit;
-    VenueList(e);
+    // VenueList(e);
+    if (lastOffset === -1) {
+      allVenues.push(...venues);
+      lastOffset = 0;
+    }
   }
 
-  <FetchVenues />;
+  function Spinner() {
+    if (isLoading === true) {
+      return (
+        <>
+          <BounceLoader
+            loading={isLoading}
+            size={30}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            color="#f29c6b"
+          />
+        </>
+      );
+    } else {
+      return <></>;
+    }
+  }
+  console.log(offset);
   return (
     <div>
       <S.ProductWrapper>
+        <Spinner />
         {venues.map((venue) => (
           <Venues
             key={venue.id}
