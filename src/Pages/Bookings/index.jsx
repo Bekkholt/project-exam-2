@@ -3,6 +3,7 @@ import FetchMyBookings from "../../Hooks/MyBookingsAPI";
 import FetchMyVenues from "../../Hooks/MyVenuesAPI";
 import { Link } from "react-router-dom";
 import * as S from "./index.styles";
+import { BounceLoader } from "react-spinners";
 
 export default function Bookings() {
   const isLoggedOut = !localStorage.getItem("accessToken");
@@ -26,7 +27,6 @@ export default function Bookings() {
   const bookings = FetchMyBookings(bookingsUrl);
   const venuesUrl = `https://v2.api.noroff.dev/holidaze/profiles/${name}/venues`;
   const venues = FetchMyVenues(venuesUrl);
-  if (bookings.isLoading === true || venues.isLoading === true) return <></>;
   if (bookings.isError === true || venues.isError === true) {
     return (
       <S.ProductWrapper>
@@ -42,9 +42,28 @@ export default function Bookings() {
     );
   }
 
+  function Spinner() {
+    if (bookings.isLoading === true || venues.isLoading === true) {
+      return (
+        <>
+          <BounceLoader
+            loading={bookings.isLoading}
+            size={30}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            color="#f29c6b"
+          />
+        </>
+      );
+    } else {
+      return <></>;
+    }
+  }
+
   return (
     <S.OuterDiv>
       <S.Title className="header">My bookings</S.Title>
+      <Spinner />
       {bookings.bookings.map((booking) => {
         return (
           <S.VenueCard key={booking.id}>
@@ -79,6 +98,7 @@ export default function Bookings() {
         );
       })}
       <S.Title className="header">My venues</S.Title>
+      <Spinner />
       {venues.venues.map((venue) => {
         return (
           <>
