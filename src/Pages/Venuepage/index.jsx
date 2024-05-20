@@ -33,13 +33,15 @@ export default function Venuepage() {
     return (
       <S.Wrapper>
         <S.CardDiv>
-          <BounceLoader
-            loading={isLoading}
-            size={30}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-            color="#f29c6b"
-          />
+          <S.Wrapper>
+            <BounceLoader
+              loading={isLoading}
+              size={30}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+              color="#f29c6b"
+            />
+          </S.Wrapper>
         </S.CardDiv>
       </S.Wrapper>
     );
