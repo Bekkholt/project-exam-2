@@ -75,6 +75,11 @@ export default function Venuepage() {
     e.preventDefault();
     console.log(chosenDates);
 
+    if (chosenDates === null) {
+      alert("Choose dates first.");
+      return <></>;
+    }
+
     const inputs = {
       dateFrom: chosenDates[0],
       dateTo: chosenDates[1],
