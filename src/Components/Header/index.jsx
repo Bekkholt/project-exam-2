@@ -24,23 +24,25 @@ function LoggedIn() {
 
 export default function Header() {
   return (
-    <S.Header>
-      <S.Left>
-        <Link to="/">
-          <Homeicon />
-        </Link>
-      </S.Left>
-      <S.Middle>
-        <Link to="/">
-          <Logo />
-        </Link>
-      </S.Middle>
-      <S.Right>
-        <Link to="../../Pages/Bookings">
-          <Calendaricon />
-        </Link>
-        {LoggedIn()}
-      </S.Right>
-    </S.Header>
+    <S.Wrapper>
+      <S.Header>
+        <S.Left>
+          <Link to="/">
+            <Homeicon />
+          </Link>
+        </S.Left>
+        <S.Middle>
+          <Link to="/">
+            <Logo />
+          </Link>
+        </S.Middle>
+        <S.Right>
+          <Link to="../../Pages/Bookings">
+            <Calendaricon />
+          </Link>
+          {LoggedIn()}
+        </S.Right>
+      </S.Header>
+    </S.Wrapper>
   );
 }

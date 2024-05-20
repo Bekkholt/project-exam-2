@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  display: flex;
+  margin-bottom: 2%;
+`;
+
 export const Header = styled.div`
   background-color: #172625;
   display: flex;
