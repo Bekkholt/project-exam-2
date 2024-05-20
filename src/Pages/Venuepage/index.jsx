@@ -2,28 +2,48 @@ import * as S from "./index.styles";
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import MyBookingCalendar from "../../Components/Calendar";
-
-const URL = "https://v2.api.noroff.dev/holidaze/bookings/";
+import { BounceLoader } from "react-spinners";
 
 export default function Venuepage() {
   const [venueDetails, setVenueDetails] = useState(null);
   const [chosenDates, setChosenDates] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   let { id } = useParams();
 
   useEffect(() => {
     async function getData(url) {
       try {
+        setIsLoading(true);
         const response = await fetch(url);
         const json = await response.json();
         setVenueDetails(json.data);
       } catch (error) {
         console.log(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
     getData(`https://v2.api.noroff.dev/holidaze/venues/${id}`);
   }, [id]);
+
+  if (isLoading) {
+    console.log("loading");
+    return (
+      <S.Wrapper>
+        <S.CardDiv>
+          <BounceLoader
+            loading={isLoading}
+            size={30}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            color="#f29c6b"
+          />
+        </S.CardDiv>
+      </S.Wrapper>
+    );
+  }
 
   if (!venueDetails) return <div></div>;
 
