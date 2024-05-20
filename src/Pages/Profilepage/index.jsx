@@ -11,6 +11,18 @@ export default function ProfilePage() {
     `https://v2.api.noroff.dev/holidaze/profiles/${name}`
   );
 
+  function Manager() {
+    if (profile.venueManager === true) {
+      return (
+        <Link to={"../../Pages/Createvenuepage"}>
+          <S.BackButton className="text">Add venue</S.BackButton>
+        </Link>
+      );
+    } else {
+      return <></>;
+    }
+  }
+
   function Content() {
     if (isLoading === true) {
       return (
@@ -27,6 +39,7 @@ export default function ProfilePage() {
         </>
       );
     }
+
     if (!profile) {
       return <></>;
     }
@@ -47,9 +60,7 @@ export default function ProfilePage() {
             <S.BackButton className="text">Update profile</S.BackButton>
           </Link>
         </S.VenueDescription>
-        <Link to={"../../Pages/Createvenuepage"}>
-          <S.BackButton className="text">Add venue</S.BackButton>
-        </Link>
+        <Manager />
         <S.ButtonDiv>
           <Logout />
         </S.ButtonDiv>

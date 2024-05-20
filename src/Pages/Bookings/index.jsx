@@ -42,8 +42,6 @@ export default function Bookings() {
     );
   }
 
-  console.log(venues);
-
   function Spinner() {
     if (bookings.isLoading === true || venues.isLoading === true) {
       return (
