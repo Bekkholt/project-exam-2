@@ -48,13 +48,15 @@ export default function Bookings() {
     if (bookings.isLoading === true || venues.isLoading === true) {
       return (
         <>
-          <BounceLoader
-            loading={bookings.isLoading}
-            size={30}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-            color="#f29c6b"
-          />
+          <S.ProductWrapper>
+            <BounceLoader
+              loading={bookings.isLoading}
+              size={30}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+              color="#f29c6b"
+            />
+          </S.ProductWrapper>
         </>
       );
     } else {
