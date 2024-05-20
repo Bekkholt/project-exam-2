@@ -39,7 +39,6 @@ export default function VenueList() {
       return <></>;
     }
   }
-  console.log(offset);
   return (
     <div>
       <S.ProductWrapper>

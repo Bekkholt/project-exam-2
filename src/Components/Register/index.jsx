@@ -4,7 +4,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import * as S from "./index.styles";
 import { Link } from "react-router-dom";
-import FetchMyProfile from "../../Hooks/MyProfileAPI";
 
 const URL = "https://v2.api.noroff.dev/auth/register";
 

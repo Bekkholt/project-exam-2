@@ -148,7 +148,10 @@ export default function Venuepage() {
             {<Pets />}
             {<Wifi />}
           </div>
-          <MyBookingCalendar setChosenDates={setChosenDates} />
+          <MyBookingCalendar
+            reserved={setChosenDates}
+            setChosenDates={setChosenDates}
+          />
         </S.Middlediv>
         <S.Price className="text">${venueDetails.price}/night</S.Price>
         <S.ButtonDiv>{BackButton()}</S.ButtonDiv>
