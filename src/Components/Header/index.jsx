@@ -6,8 +6,8 @@ import * as S from "./index.styles";
 import Profileicon from "../Icons/Profile";
 
 function LoggedIn() {
-  const token = localStorage.getItem("accessToken");
-  if (token) {
+  const name = localStorage.getItem("name");
+  if (name) {
     return (
       <Link to="../../Pages/Profilepage">
         <Profileicon />
