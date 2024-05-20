@@ -115,7 +115,7 @@ export default function Venuepage() {
       );
     } else {
       return (
-        <Link to={"../Loginpage"}>
+        <Link to="../../Pages/Loginpage">
           <S.BackButton className="header">Login to book</S.BackButton>
         </Link>
       );
