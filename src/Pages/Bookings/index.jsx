@@ -42,6 +42,8 @@ export default function Bookings() {
     );
   }
 
+  console.log(venues);
+
   function Spinner() {
     if (bookings.isLoading === true || venues.isLoading === true) {
       return (
@@ -116,6 +118,12 @@ export default function Bookings() {
                   <S.VenuePrice className="text">
                     ${venue.price}/night
                   </S.VenuePrice>
+                  <S.VenueDescription className="text">
+                    Current bookings:
+                  </S.VenueDescription>
+                  <S.VenueDescription>
+                    {venue._count.bookings}
+                  </S.VenueDescription>
                 </S.BottomCard>
               </Link>
               <Link to={`../../Pages/Updatevenuepage/${venue.id}`}>
