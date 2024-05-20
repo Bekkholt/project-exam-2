@@ -14,13 +14,17 @@ export default function ProfilePage() {
   function Content() {
     if (isLoading === true) {
       return (
-        <BounceLoader
-          loading={isLoading}
-          size={30}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-          color="#f29c6b"
-        />
+        <>
+          <S.Wrapper>
+            <BounceLoader
+              loading={isLoading}
+              size={30}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+              color="#f29c6b"
+            />
+          </S.Wrapper>
+        </>
       );
     }
     if (!profile) {
