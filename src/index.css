@@ -6,12 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  background-image: url(/public/patrick-robert-doyle-AH8zKXqFITA-unsplash-min.jpg);
+  background: url(/public/patrick-robert-doyle-AH8zKXqFITA-unsplash-min.jpg)
+    no-repeat fixed;
   background-position: center;
   background-size: cover;
   background-blend-mode: color-burn;
   background-color: #17262594;
-  /* background-repeat: no-repeat; */
+  position: sticky;
 }
 
 code {
