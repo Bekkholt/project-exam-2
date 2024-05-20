@@ -4,6 +4,7 @@ import FetchMyVenues from "../../Hooks/MyVenuesAPI";
 import { Link } from "react-router-dom";
 import * as S from "./index.styles";
 import { BounceLoader } from "react-spinners";
+import FetchMyProfile from "../../Hooks/MyProfileAPI";
 
 export default function Bookings() {
   const isLoggedOut = !localStorage.getItem("accessToken");
@@ -27,6 +28,9 @@ export default function Bookings() {
   const bookings = FetchMyBookings(bookingsUrl);
   const venuesUrl = `https://v2.api.noroff.dev/holidaze/profiles/${name}/venues`;
   const venues = FetchMyVenues(venuesUrl);
+  const profileUrl = `https://v2.api.noroff.dev/holidaze/profiles/${name}`;
+  const profile = FetchMyProfile(profileUrl);
+
   if (bookings.isError === true || venues.isError === true) {
     return (
       <S.ProductWrapper>
@@ -40,6 +44,47 @@ export default function Bookings() {
         </S.VenueCard>
       </S.ProductWrapper>
     );
+  }
+
+  function Manager() {
+    if (profile.venueManager === true) {
+      {
+        venues.venues.map((venue) => {
+          return (
+            <>
+              <S.Title className="header">My venues</S.Title>
+              <Spinner />
+              <S.VenueCard key={venue.id}>
+                <Link to={`../../Pages/Venuepage/${venue.id}`}>
+                  <S.TopCard>
+                    <S.VenueImage src={venue.media[0].url} />
+                  </S.TopCard>
+                  <S.Title className="header">{venue.name}</S.Title>
+                  <S.VenueDescription className="text">
+                    {venue.location.city}, {venue.location.country}
+                  </S.VenueDescription>
+                  <S.VenueDescription>{venue.description}</S.VenueDescription>
+                  <S.BottomCard>
+                    <S.VenuePrice className="text">
+                      ${venue.price}/night
+                    </S.VenuePrice>
+                    <S.VenueDescription className="text">
+                      Current bookings:
+                    </S.VenueDescription>
+                    <S.VenueDescription>
+                      {venue._count.bookings}
+                    </S.VenueDescription>
+                  </S.BottomCard>
+                </Link>
+                <Link to={`../../Pages/Updatevenuepage/${venue.id}`}>
+                  <S.Button className="text">Update venue</S.Button>
+                </Link>
+              </S.VenueCard>
+            </>
+          );
+        });
+      }
+    }
   }
 
   function Spinner() {
@@ -99,40 +144,7 @@ export default function Bookings() {
           </S.VenueCard>
         );
       })}
-      <S.Title className="header">My venues</S.Title>
-      <Spinner />
-      {venues.venues.map((venue) => {
-        return (
-          <>
-            <S.VenueCard key={venue.id}>
-              <Link to={`../../Pages/Venuepage/${venue.id}`}>
-                <S.TopCard>
-                  <S.VenueImage src={venue.media[0].url} />
-                </S.TopCard>
-                <S.Title className="header">{venue.name}</S.Title>
-                <S.VenueDescription className="text">
-                  {venue.location.city}, {venue.location.country}
-                </S.VenueDescription>
-                <S.VenueDescription>{venue.description}</S.VenueDescription>
-                <S.BottomCard>
-                  <S.VenuePrice className="text">
-                    ${venue.price}/night
-                  </S.VenuePrice>
-                  <S.VenueDescription className="text">
-                    Current bookings:
-                  </S.VenueDescription>
-                  <S.VenueDescription>
-                    {venue._count.bookings}
-                  </S.VenueDescription>
-                </S.BottomCard>
-              </Link>
-              <Link to={`../../Pages/Updatevenuepage/${venue.id}`}>
-                <S.Button className="text">Update venue</S.Button>
-              </Link>
-            </S.VenueCard>
-          </>
-        );
-      })}
+      <Manager />
       <Logout />
     </S.OuterDiv>
   );

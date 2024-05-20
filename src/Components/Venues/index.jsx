@@ -16,8 +16,9 @@ export default function Venues(venue) {
         <S.TopCard>{<Image />}</S.TopCard>
         <S.Title className="header">{venue.name}</S.Title>
         <S.VenueDescription className="text">
-          {venue.location.city}, {venue.location.country}
+          {venue.location.city}
         </S.VenueDescription>
+        <S.VenueDescription> {venue.location.country}</S.VenueDescription>
         <S.BottomCard>
           <S.Button className="header">See more</S.Button>
           <S.VenuePrice className="text">${venue.price}/night</S.VenuePrice>

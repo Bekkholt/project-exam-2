@@ -139,7 +139,7 @@ export default function Venuepage() {
               {venueDetails.location.address}
             </S.VenueAdress>
             <S.VenueAdress className="text">
-              {venueDetails.location.city}, {venueDetails.location.country}
+              {venueDetails.location.city} {venueDetails.location.country}
             </S.VenueAdress>
             {<Breakfast />}
             {<Parking />}
