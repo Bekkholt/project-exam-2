@@ -73,7 +73,7 @@ export default function Bookings() {
           <S.VenueCard key={booking.id}>
             <Link to={`../../Pages/Venuepage/${booking.venue.id}`}>
               <S.TopCard>
-                <S.VenueImage src={booking.venue.media.url} />
+                <S.VenueImage src={booking.venue.media[0].url} />
               </S.TopCard>
               <S.Title className="header">{booking.venue.name}</S.Title>
               <S.VenueDescription className="text">
@@ -109,7 +109,7 @@ export default function Bookings() {
             <S.VenueCard key={venue.id}>
               <Link to={`../../Pages/Venuepage/${venue.id}`}>
                 <S.TopCard>
-                  <S.VenueImage src={venue.media.url} />
+                  <S.VenueImage src={venue.media[0].url} />
                 </S.TopCard>
                 <S.Title className="header">{venue.name}</S.Title>
                 <S.VenueDescription className="text">
