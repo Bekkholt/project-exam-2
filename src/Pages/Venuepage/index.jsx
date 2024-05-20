@@ -4,6 +4,8 @@ import { useParams, Link } from "react-router-dom";
 import MyBookingCalendar from "../../Components/Calendar";
 import { BounceLoader } from "react-spinners";
 
+const URL = "https://v2.api.noroff.dev/holidaze/bookings/";
+
 export default function Venuepage() {
   const [venueDetails, setVenueDetails] = useState(null);
   const [chosenDates, setChosenDates] = useState(null);
@@ -115,7 +117,7 @@ export default function Venuepage() {
       );
     } else {
       return (
-        <Link to="../../Pages/Loginpage">
+        <Link to={"../../Pages/Loginpage"}>
           <S.BackButton className="header">Login to book</S.BackButton>
         </Link>
       );
