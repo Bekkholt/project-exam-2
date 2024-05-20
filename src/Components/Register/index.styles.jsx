@@ -5,6 +5,12 @@ export const OuterDiv = styled.div`
   justify-content: center;
 `;
 
+export const CheckboxDiv = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
 export const CreateAccountDiv = styled.div`
   background-color: #172625d8;
   margin-top: 10%;
@@ -51,10 +57,17 @@ export const InsertPassword = styled.input`
   margin-top: 10%;
 `;
 
-export const SelectDiv = styled.div`
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
+export const InsertManager = styled.input`
+  background-color: #d9b6a3;
+  height: 23px;
+  max-width: 30vh;
+  border-radius: 0.5rem;
+  margin-top: 3%;
+`;
+
+export const VenueDescription = styled.p`
+  color: #f29c6b;
+  padding-left: 5%;
 `;
 
 export const Text = styled.p`

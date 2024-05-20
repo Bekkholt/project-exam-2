@@ -1,10 +1,10 @@
 import React from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import * as S from "./index.styles";
-import Select from "react-select";
 import { Link } from "react-router-dom";
+import FetchMyProfile from "../../Hooks/MyProfileAPI";
 
 const URL = "https://v2.api.noroff.dev/auth/register";
 
@@ -27,24 +27,25 @@ const schema = yup
       .min(8, "The password must be at least 8 characters.")
       .required("The password must be at least 8 characters."),
 
-    role: yup.string().oneOf(["customer", "manager"]).required(),
+    manager: yup.bool().optional(),
   })
   .required();
 
 export default function CreateAccount() {
-  const { register, control } = useForm({
+  const { register } = useForm({
     resolver: yupResolver(schema),
   });
 
   async function handleSubmit(e) {
     e.preventDefault();
 
+    console.log(e.target);
+
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
       password: e.target.password.value,
-      role: e.target.role.value,
-      venueManager: e.target.role.value === "manager",
+      venueManager: e.target.venueManager.checked,
     };
 
     try {
@@ -106,32 +107,18 @@ export default function CreateAccount() {
             type="password"
             autocomplete="current-password"
           />
-          <S.SelectDiv>
-            <Controller
-              name={"role"}
-              control={control}
-              render={({ field }) => {
-                return (
-                  <Select
-                    {...field}
-                    options={[
-                      { value: "customer", label: "Register as a customer" },
-                      { value: "manager", label: "Register as a manager" },
-                    ]}
-                    placeholder="Select a role"
-                  />
-                );
-              }}
-            />
-            <S.ButtonDiv>
-              <S.Button className="text" type="submit">
-                Create account
-              </S.Button>
-              <Link to="../../Pages/Loginpage">
-                <S.Button className="text">Back to login</S.Button>
-              </Link>
-            </S.ButtonDiv>
-          </S.SelectDiv>
+          <S.CheckboxDiv>
+            <S.InsertManager type="checkbox" {...register("venueManager")} />
+            <S.VenueDescription>I am a venue manager</S.VenueDescription>
+          </S.CheckboxDiv>
+          <S.ButtonDiv>
+            <S.Button className="text" type="submit">
+              Create account
+            </S.Button>
+            <Link to="../../Pages/Loginpage">
+              <S.Button className="text">Back to login</S.Button>
+            </Link>
+          </S.ButtonDiv>
         </S.RegisterDetails>
       </S.CreateAccountDiv>
     </S.OuterDiv>
