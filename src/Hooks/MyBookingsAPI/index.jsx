@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-const name = localStorage.getItem("name");
+// const name = localStorage.getItem("name");
 
-const url =
-  "https://v2.api.noroff.dev/holidaze/profiles/" + name + "?_bookings=true";
+// const url =
+//   "https://v2.api.noroff.dev/holidaze/profiles/" + name + "?_bookings=true";
 
-export default function FetchMyBookings() {
+export default function FetchMyBookings(url) {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -37,7 +37,7 @@ export default function FetchMyBookings() {
       }
     }
     getData();
-  }, []);
+  }, [url]);
 
   return { bookings, isLoading, isError };
 }
