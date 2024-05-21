@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
 
-// const name = localStorage.getItem("name");
-
-// const url =
-//   "https://v2.api.noroff.dev/holidaze/profiles/" + name + "?_bookings=true";
-
 export default function FetchMyBookings(url) {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
