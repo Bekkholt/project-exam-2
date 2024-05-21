@@ -60,7 +60,9 @@ export default function ProfilePage() {
             <S.BackButton className="text">Update profile</S.BackButton>
           </Link>
         </S.VenueDescription>
-        <Manager />
+        <S.VenueDescription>
+          <Manager />
+        </S.VenueDescription>
         <S.ButtonDiv>
           <Logout />
         </S.ButtonDiv>
