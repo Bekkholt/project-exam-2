@@ -2,24 +2,28 @@ import Venues from "../Venues";
 import * as S from "./index.styles";
 import FetchVenues from "../../Hooks/VenueAPI/index";
 import { BounceLoader } from "react-spinners";
+import { useState } from "react";
 
 const sortBy = "created";
-const limit = 20;
-let offset = 0;
+const limit = 18;
 const allVenues = [];
-let lastOffset = -1;
 
 export default function VenueList() {
+  const [page, setPage] = useState(1);
   const { venues, isLoading } = FetchVenues(
-    `https://v2.api.noroff.dev/holidaze/venues/?sort=${sortBy}&limit=${limit}&offset=${offset}`
+    `https://v2.api.noroff.dev/holidaze/venues/?sort=${sortBy}&limit=${limit}&page=${page}`
   );
-  function onClick(e) {
-    offset += limit;
-    VenueList(e);
-    if (lastOffset === -1) {
-      allVenues.push(...venues);
-      lastOffset = 0;
-    }
+
+  function LoadMore(e) {
+    setPage(page + 1);
+  }
+
+  if (venues?.length > 0) {
+    venues.forEach((venue) => {
+      if (allVenues.findIndex((v) => v.id === venue.id) === -1) {
+        allVenues.push(venue);
+      }
+    });
   }
 
   function Spinner() {
@@ -43,7 +47,7 @@ export default function VenueList() {
     <div>
       <S.ProductWrapper>
         <Spinner />
-        {venues.map((venue) => (
+        {allVenues.map((venue) => (
           <Venues
             key={venue.id}
             id={venue.id}
@@ -56,7 +60,7 @@ export default function VenueList() {
         ))}
       </S.ProductWrapper>
       <S.ProductWrapper>
-        <S.Button className="text" onClick={onClick}>
+        <S.Button className="text" onClick={LoadMore}>
           See more venues
         </S.Button>
       </S.ProductWrapper>
