@@ -113,9 +113,6 @@ export default function Bookings() {
     }
   }
 
-  const dateFrom = dateFormat(bookings.bookings[0].dateFrom, "mmmm dS, yyyy");
-  const dateTo = dateFormat(bookings.bookings[0].dateTo, "mmmm dS, yyyy");
-
   return (
     <S.OuterDiv>
       <S.Title className="header">My bookings</S.Title>
