@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import * as S from "./index.styles";
 import { BounceLoader } from "react-spinners";
 import FetchMyProfile from "../../Hooks/MyProfileAPI";
+import dateFormat from "dateformat";
 
 export default function Bookings() {
   const isLoggedOut = !localStorage.getItem("accessToken");
@@ -112,6 +113,9 @@ export default function Bookings() {
     }
   }
 
+  const dateFrom = dateFormat(bookings.bookings[0].dateFrom, "mmmm dS, yyyy");
+  const dateTo = dateFormat(bookings.bookings[0].dateTo, "mmmm dS, yyyy");
+
   return (
     <S.OuterDiv>
       <S.Title className="header">My bookings</S.Title>
@@ -134,11 +138,11 @@ export default function Bookings() {
                 Booked dates:{" "}
               </S.VenueDescription>
               <S.VenueDescription className="text">
-                {booking.dateFrom}{" "}
+                {dateFormat(booking.dateFrom, "mmmm dS, yyyy")}{" "}
               </S.VenueDescription>{" "}
               <S.VenueDescription className="text"> to </S.VenueDescription>{" "}
               <S.VenueDescription className="text">
-                {booking.dateTo}
+                {dateFormat(booking.dateTo, "mmmm dS, yyyy")}
               </S.VenueDescription>
               <S.BottomCard>
                 <S.VenuePrice className="text">
