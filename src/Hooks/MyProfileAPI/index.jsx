@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 
-const name = localStorage.getItem("name");
-
-const url = "https://v2.api.noroff.dev/holidaze/profiles/" + name;
-
-export default function FetchMyProfile() {
+export default function FetchMyProfile(url) {
   const [profile, setProfile] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -36,7 +32,7 @@ export default function FetchMyProfile() {
       }
     }
     getData();
-  }, []);
+  }, [url]);
 
   return { profile, isLoading, isError };
 }

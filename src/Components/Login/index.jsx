@@ -28,12 +28,12 @@ export default function Login() {
         body: JSON.stringify(inputs),
       };
       const response = await fetch(URL, data);
-      console.log(response);
-      const json = await response.json();
-      localStorage.setItem("accessToken", json.data.accessToken);
-      localStorage.setItem("name", json.data.name);
-      console.log(json);
       if (response.status === 200) {
+        console.log(response);
+        const json = await response.json();
+        localStorage.setItem("accessToken", json.data.accessToken);
+        localStorage.setItem("name", json.data.name);
+        console.log(json);
         const APIKeyData = {
           method: "POST",
           headers: {

@@ -5,24 +5,24 @@ import { Link } from "react-router-dom";
 import * as S from "./index.styles";
 import Profileicon from "../Icons/Profile";
 
-function LoggedIn() {
-  const name = localStorage.getItem("name");
-  if (name) {
-    return (
-      <Link to="../../Pages/Profilepage">
-        <Profileicon />
-      </Link>
-    );
-  } else {
-    return (
-      <Link to="../../Pages/Loginpage">
-        <Profileicon />
-      </Link>
-    );
-  }
-}
-
 export default function Header() {
+  function LoggedIn() {
+    const name = localStorage.getItem("name");
+    if (name) {
+      return (
+        <Link to="../../Pages/Profilepage">
+          <Profileicon />
+        </Link>
+      );
+    } else {
+      return (
+        <Link to="../../Pages/Loginpage">
+          <Profileicon />
+        </Link>
+      );
+    }
+  }
+
   return (
     <S.Wrapper>
       <S.Header>
