@@ -8,6 +8,7 @@ export const Footer = styled.div`
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 0.5%;
+  margin-top: 2%;
 `;
 
 export const Text = styled.p`
