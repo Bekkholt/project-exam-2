@@ -35,6 +35,7 @@ export default function Searchbar() {
   return (
     <S.Searchdiv>
       <S.Searchbar
+        name="Search"
         className="text"
         onSubmit={(e) => e.preventDefault()}
         action="search"

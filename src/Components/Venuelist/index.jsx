@@ -15,7 +15,7 @@ export default function VenueList() {
   );
   function onClick(e) {
     offset += limit;
-    // VenueList(e);
+    VenueList(e);
     if (lastOffset === -1) {
       allVenues.push(...venues);
       lastOffset = 0;
