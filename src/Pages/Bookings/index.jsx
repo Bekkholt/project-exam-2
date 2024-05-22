@@ -49,6 +49,9 @@ export default function Bookings() {
     console.log("Manager", { profile, venues, bookings, name });
     if (!profile.profile) return <></>;
     if (profile.profile.venueManager) {
+      if (venues.venues === undefined) {
+        return <S.Title className="header">My Venues</S.Title>;
+      }
       return (
         <>
           <S.Title className="header">My venues</S.Title>
@@ -96,7 +99,7 @@ export default function Bookings() {
         <>
           <S.ProductWrapper>
             <BounceLoader
-              loading={bookings.isLoading}
+              loading={bookings.isLoading || venues.isLoading}
               size={30}
               aria-label="Loading Spinner"
               data-testid="loader"

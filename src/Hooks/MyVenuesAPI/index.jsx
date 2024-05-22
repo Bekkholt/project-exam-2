@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 
-const name = localStorage.getItem("name");
-
-const url = "https://v2.api.noroff.dev/holidaze/profiles/" + name + "/venues";
-
-export default function FetchMyVenues() {
+export default function FetchMyVenues(url) {
   const [venues, setVenues] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -36,7 +32,7 @@ export default function FetchMyVenues() {
       }
     }
     getData();
-  }, []);
+  }, [url]);
 
   return { venues, isLoading, isError };
 }
