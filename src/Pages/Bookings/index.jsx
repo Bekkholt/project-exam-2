@@ -48,7 +48,7 @@ export default function Bookings() {
   function Manager() {
     console.log("Manager", { profile, venues, bookings, name });
     if (!profile.profile) return <></>;
-    if (profile.profile.venueManager === true) {
+    if (profile.profile.venueManager) {
       return (
         <>
           <S.Title className="header">My venues</S.Title>
