@@ -31,3 +31,13 @@ export const Middle = styled.div`
 export const Right = styled.div`
   padding-right: 5%;
 `;
+
+export const Button = styled.button`
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+`;

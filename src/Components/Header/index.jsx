@@ -37,9 +37,9 @@ export default function Header() {
           <Link to="../../Pages/Bookings">
             <Calendaricon />
           </Link>
-          <button onClick={onClickedLogin}>
+          <S.Button onClick={onClickedLogin}>
             <Profileicon />
-          </button>
+          </S.Button>
         </S.Right>
       </S.Header>
     </S.Wrapper>
