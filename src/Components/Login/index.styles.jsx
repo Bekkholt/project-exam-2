@@ -7,7 +7,7 @@ export const OuterDiv = styled.div`
 
 export const LoginDiv = styled.div`
   background-color: #172625d8;
-  margin-top: 8%;
+  margin-top: 10%;
   border-radius: 1em;
   display: flex;
   justify-content: center;

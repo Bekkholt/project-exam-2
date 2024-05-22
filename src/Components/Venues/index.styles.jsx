@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const VenueCard = styled.div`
   background-color: #172625;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
   width: 55vh;
   margin: 2%;
-  margin-top: 5%;
   border-radius: 1em;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
 
@@ -26,6 +28,7 @@ export const Title = styled.h1`
 export const VenueImage = styled.img`
   width: 100%;
   border-radius: 1em;
+  height: 280px;
 `;
 
 export const VenueDescription = styled.p`
@@ -58,6 +61,7 @@ export const TopCard = styled.div`
 
 export const BottomCard = styled.div`
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: 3%;
+  padding: 2%;
 `;
