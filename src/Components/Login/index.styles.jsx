@@ -7,12 +7,12 @@ export const OuterDiv = styled.div`
 
 export const LoginDiv = styled.div`
   background-color: #172625d8;
-  margin-top: 10%;
+  margin-top: 8%;
   border-radius: 1em;
   display: flex;
   justify-content: center;
-  width: 50vh;
-  height: 70vh;
+  width: 35vh;
+  height: 55vh;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
 `;
 
