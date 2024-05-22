@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const ProductWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 2%;
-  margin: 8%;
+  justify-content: center;
 `;
 
 export const Button = styled.button`
