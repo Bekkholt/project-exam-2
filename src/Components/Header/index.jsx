@@ -8,24 +8,6 @@ import Profileicon from "../Icons/Profile";
 export default function Header() {
   const navigate = useNavigate();
 
-  // function LoggedIn() {
-  //   const name = localStorage.getItem("name");
-  //   console.log({ name });
-  //   if (!name) {
-  //     return (
-  //       <Link to="../../Pages/Loginpage">
-  //         <Profileicon />
-  //       </Link>
-  //     );
-  //   } else {
-  //     return (
-  //       <Link to="../../Pages/Profilepage">
-  //         <Profileicon />
-  //       </Link>
-  //     );
-  //   }
-  // }
-
   function onClickedLogin() {
     const name = localStorage.getItem("name");
     console.log({ name });
@@ -55,7 +37,6 @@ export default function Header() {
           <Link to="../../Pages/Bookings">
             <Calendaricon />
           </Link>
-          {/* <LoggedIn /> */}
           <button onClick={onClickedLogin}>
             <Profileicon />
           </button>
