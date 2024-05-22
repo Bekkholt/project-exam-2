@@ -35,34 +35,8 @@ export const ProfileDiv = styled.div`
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
 `;
 
-export const VenueImage = styled.img`
-  width: 100%;
-  border-radius: 1em;
-`;
-
-export const Title = styled.h1`
-  color: #f29c6b;
-  display: flex;
-  justify-content: center;
-  margin-top: 10%;
-`;
-
 export const Text = styled.p`
   color: #f29c6b;
-`;
-
-export const VenueCard = styled.div`
-  background-color: #172625;
-  width: 55vh;
-  margin: 2%;
-  margin-top: 2%;
-  border-radius: 1em;
-  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
-
-  :hover {
-    background-color: #294745;
-    cursor: pointer;
-  }
 `;
 
 export const Card = styled.div`
@@ -77,19 +51,46 @@ export const Card = styled.div`
   align-items: center;
 `;
 
+export const GeneralText = styled.p`
+  color: #f29c6b;
+  display: flex;
+  justify-content: center;
+`;
+
+export const VenueCard = styled.div`
+  background-color: #172625;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  width: 55vh;
+  margin: 2%;
+  border-radius: 1em;
+  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
+
+  :hover {
+    background-color: #294745;
+    cursor: pointer;
+  }
+`;
+
 export const VenueRating = styled.p`
   color: #f29c6b;
+`;
+
+export const Title = styled.h1`
+  color: #f29c6b;
+  margin-top: 50px;
+`;
+
+export const VenueImage = styled.img`
+  width: 100%;
+  border-radius: 1em;
+  height: 280px;
 `;
 
 export const VenueDescription = styled.p`
   color: #f29c6b;
   padding-left: 5%;
-`;
-
-export const GeneralText = styled.p`
-  color: #f29c6b;
-  display: flex;
-  justify-content: center;
 `;
 
 export const Button = styled.button`
@@ -117,6 +118,7 @@ export const TopCard = styled.div`
 
 export const BottomCard = styled.div`
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: 3%;
+  padding: 2%;
 `;

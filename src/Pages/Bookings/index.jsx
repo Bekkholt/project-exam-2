@@ -33,14 +33,14 @@ export default function Bookings() {
   if (bookings.isError === true || venues.isError === true) {
     return (
       <S.ProductWrapper>
-        <S.VenueCard>
+        <S.Card>
           <S.VenueDescription>
             You have to log in to see your bookings and venues
           </S.VenueDescription>
           <Link to="../../Pages/Loginpage">
             <S.Button className="header">Go to login</S.Button>
           </Link>
-        </S.VenueCard>
+        </S.Card>
       </S.ProductWrapper>
     );
   }
@@ -54,34 +54,32 @@ export default function Bookings() {
           <Spinner />
           {venues.venues.map((venue) => {
             return (
-              <>
-                <S.VenueCard key={venue.id}>
-                  <Link to={`../../Pages/Venuepage/${venue.id}`}>
-                    <S.TopCard>
-                      <S.VenueImage src={venue.media[0].url} />
-                    </S.TopCard>
-                    <S.Title className="header">{venue.name}</S.Title>
+              <S.Card key={venue.id}>
+                <Link to={`../../Pages/Venuepage/${venue.id}`}>
+                  <S.TopCard>
+                    <S.VenueImage src={venue.media[0].url} />
+                  </S.TopCard>
+                  <S.Title className="header">{venue.name}</S.Title>
+                  <S.VenueDescription className="text">
+                    {venue.location.city}, {venue.location.country}
+                  </S.VenueDescription>
+                  <S.VenueDescription>{venue.description}</S.VenueDescription>
+                  <S.BottomCard>
+                    <S.VenuePrice className="text">
+                      ${venue.price}/night
+                    </S.VenuePrice>
                     <S.VenueDescription className="text">
-                      {venue.location.city}, {venue.location.country}
+                      Current bookings:
                     </S.VenueDescription>
-                    <S.VenueDescription>{venue.description}</S.VenueDescription>
-                    <S.BottomCard>
-                      <S.VenuePrice className="text">
-                        ${venue.price}/night
-                      </S.VenuePrice>
-                      <S.VenueDescription className="text">
-                        Current bookings:
-                      </S.VenueDescription>
-                      <S.VenueDescription>
-                        {venue._count.bookings}
-                      </S.VenueDescription>
-                    </S.BottomCard>
-                  </Link>
-                  <Link to={`../../Pages/Updatevenuepage/${venue.id}`}>
-                    <S.Button className="text">Update venue</S.Button>
-                  </Link>
-                </S.VenueCard>
-              </>
+                    <S.VenueDescription>
+                      {venue._count.bookings}
+                    </S.VenueDescription>
+                  </S.BottomCard>
+                </Link>
+                <Link to={`../../Pages/Updatevenuepage/${venue.id}`}>
+                  <S.Button className="text">Update venue</S.Button>
+                </Link>
+              </S.Card>
             );
           })}
         </>
@@ -115,7 +113,7 @@ export default function Bookings() {
     <S.OuterDiv>
       <S.Title className="header">My bookings</S.Title>
       <Spinner />
-      {bookings.bookings.map((booking) => {
+      {bookings?.bookings?.map((booking) => {
         return (
           <S.VenueCard key={booking.id}>
             <Link to={`../../Pages/Venuepage/${booking.venue.id}`}>
