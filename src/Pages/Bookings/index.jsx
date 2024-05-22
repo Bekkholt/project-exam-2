@@ -8,7 +8,7 @@ import FetchMyProfile from "../../Hooks/MyProfileAPI";
 import dateFormat from "dateformat";
 
 export default function Bookings() {
-  const isLoggedOut = !localStorage.getItem("accessToken");
+  const isLoggedOut = localStorage.getItem("accessToken") === null;
   if (isLoggedOut) {
     return (
       <S.CardDiv>
@@ -46,6 +46,7 @@ export default function Bookings() {
   }
 
   function Manager() {
+    console.log("Manager", { profile, venues, bookings, name });
     if (!profile.profile) return <></>;
     if (profile.profile.venueManager === true) {
       return (
