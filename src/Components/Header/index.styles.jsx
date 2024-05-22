@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  margin-bottom: 2%;
+  margin-bottom: 8vh;
 `;
 
 export const Header = styled.div`
