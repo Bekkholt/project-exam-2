@@ -8,6 +8,13 @@ export const ProductWrapper = styled.div`
   margin-top: 20%;
 `;
 
+export const CardDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  margin-top: 8vh;
+`;
+
 export const OuterDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,6 +65,18 @@ export const VenueCard = styled.div`
   }
 `;
 
+export const Card = styled.div`
+  background-color: #172625;
+  width: 55vh;
+  margin: 2%;
+  padding: 2%;
+  border-radius: 1em;
+  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const VenueRating = styled.p`
   color: #f29c6b;
 `;
@@ -67,13 +86,18 @@ export const VenueDescription = styled.p`
   padding-left: 5%;
 `;
 
+export const GeneralText = styled.p`
+  color: #f29c6b;
+  display: flex;
+  justify-content: center;
+`;
+
 export const Button = styled.button`
   background-color: #f29c6b;
   border-radius: 0.5rem;
   width: 10rem;
   height: 3rem;
   cursor: pointer;
-  margin: 2%;
 
   :hover {
     background-color: #f6813e;

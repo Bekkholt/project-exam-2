@@ -11,16 +11,14 @@ export default function Bookings() {
   const isLoggedOut = !localStorage.getItem("accessToken");
   if (isLoggedOut) {
     return (
-      <S.ProductWrapper>
-        <S.VenueCard>
-          <S.VenueDescription>
-            You have to log in to see your bookings
-          </S.VenueDescription>
+      <S.CardDiv>
+        <S.Card>
+          <S.GeneralText>You have to log in to see your bookings</S.GeneralText>
           <Link to="../../Pages/Loginpage">
             <S.Button className="header">Go to login</S.Button>
           </Link>
-        </S.VenueCard>
-      </S.ProductWrapper>
+        </S.Card>
+      </S.CardDiv>
     );
   }
 
