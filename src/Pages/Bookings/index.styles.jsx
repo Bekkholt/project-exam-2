@@ -73,13 +73,14 @@ export const VenueCard = styled.div`
   }
 `;
 
-export const VenueRating = styled.p`
-  color: #f29c6b;
-`;
-
 export const Title = styled.h1`
   color: #f29c6b;
-  margin-top: 50px;
+  padding-left: 5%;
+`;
+
+export const Heading = styled.h1`
+  color: #f29c6b;
+  margin-top: 10%;
 `;
 
 export const VenueImage = styled.img`
@@ -91,6 +92,13 @@ export const VenueImage = styled.img`
 export const VenueDescription = styled.p`
   color: #f29c6b;
   padding-left: 5%;
+  padding-right: 5%;
+`;
+
+export const Booked = styled.p`
+  color: #f29c6b;
+  padding-left: 5%;
+  margin: 1%;
 `;
 
 export const Button = styled.button`
@@ -108,6 +116,8 @@ export const Button = styled.button`
 export const VenuePrice = styled.p`
   font-size: large;
   color: #f29c6b;
+  padding-left: 5%;
+  padding-right; 5%;
 `;
 
 export const TopCard = styled.div`
@@ -121,4 +131,17 @@ export const BottomCard = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   padding: 2%;
+`;
+
+export const UpdateButton = styled.button`
+  background-color: #f29c6b;
+  border-radius: 0.5rem;
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+  margin: 2%;
+
+  :hover {
+    background-color: #f6813e;
+  }
 `;

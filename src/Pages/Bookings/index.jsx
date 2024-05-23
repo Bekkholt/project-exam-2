@@ -33,32 +33,31 @@ export default function Bookings() {
   if (bookings.isError === true || venues.isError === true) {
     return (
       <S.ProductWrapper>
-        <S.Card>
+        <S.VenueCard>
           <S.VenueDescription>
             You have to log in to see your bookings and venues
           </S.VenueDescription>
           <Link to="../../Pages/Loginpage">
             <S.Button className="header">Go to login</S.Button>
           </Link>
-        </S.Card>
+        </S.VenueCard>
       </S.ProductWrapper>
     );
   }
 
   function Manager() {
-    console.log("Manager", { profile, venues, bookings, name });
     if (!profile.profile) return <></>;
     if (profile.profile.venueManager) {
       if (venues.venues === undefined) {
-        return <S.Title className="header">My Venues</S.Title>;
+        return <S.Heading className="header">My Venues</S.Heading>;
       }
       return (
         <>
-          <S.Title className="header">My venues</S.Title>
+          <S.Heading className="header">My venues</S.Heading>
           <Spinner />
           {venues.venues.map((venue) => {
             return (
-              <S.Card key={venue.id}>
+              <S.VenueCard key={venue.id}>
                 <Link to={`../../Pages/Venuepage/${venue.id}`}>
                   <S.TopCard>
                     <S.VenueImage src={venue.media[0].url} />
@@ -67,23 +66,23 @@ export default function Bookings() {
                   <S.VenueDescription className="text">
                     {venue.location.city}, {venue.location.country}
                   </S.VenueDescription>
-                  <S.VenueDescription>{venue.description}</S.VenueDescription>
+                  <S.VenueDescription className="text">
+                    {venue.description}
+                  </S.VenueDescription>
                   <S.BottomCard>
                     <S.VenuePrice className="text">
                       ${venue.price}/night
                     </S.VenuePrice>
-                    <S.VenueDescription className="text">
-                      Current bookings:
-                    </S.VenueDescription>
-                    <S.VenueDescription>
+                    <S.Booked className="header">Current bookings:</S.Booked>
+                    <S.Booked className="header">
                       {venue._count.bookings}
-                    </S.VenueDescription>
+                    </S.Booked>
                   </S.BottomCard>
                 </Link>
                 <Link to={`../../Pages/Updatevenuepage/${venue.id}`}>
-                  <S.Button className="text">Update venue</S.Button>
+                  <S.UpdateButton className="text">Update venue</S.UpdateButton>
                 </Link>
-              </S.Card>
+              </S.VenueCard>
             );
           })}
         </>
@@ -96,17 +95,15 @@ export default function Bookings() {
   function Spinner() {
     if (bookings.isLoading === true || venues.isLoading === true) {
       return (
-        <>
-          <S.ProductWrapper>
-            <BounceLoader
-              loading={bookings.isLoading || venues.isLoading}
-              size={30}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-              color="#f29c6b"
-            />
-          </S.ProductWrapper>
-        </>
+        <S.ProductWrapper>
+          <BounceLoader
+            loading={bookings.isLoading || venues.isLoading}
+            size={30}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            color="#f29c6b"
+          />
+        </S.ProductWrapper>
       );
     } else {
       return <></>;
@@ -115,7 +112,7 @@ export default function Bookings() {
 
   return (
     <S.OuterDiv>
-      <S.Title className="header">My bookings</S.Title>
+      <S.Heading className="header">My bookings</S.Heading>
       <Spinner />
       {bookings?.bookings?.map((booking) => {
         return (
@@ -128,19 +125,17 @@ export default function Bookings() {
               <S.VenueDescription className="text">
                 {booking.venue.location.city}, {booking.venue.location.country}
               </S.VenueDescription>
-              <S.VenueDescription>
+              <S.VenueDescription className="text">
                 {booking.venue.description}
               </S.VenueDescription>
-              <S.VenueDescription className="text">
-                Booked dates:{" "}
-              </S.VenueDescription>
-              <S.VenueDescription className="text">
+              <S.Booked className="text">Booked dates: </S.Booked>
+              <S.Booked className="header">
                 {dateFormat(booking.dateFrom, "mmmm dS, yyyy")}{" "}
-              </S.VenueDescription>{" "}
-              <S.VenueDescription className="text"> to </S.VenueDescription>{" "}
-              <S.VenueDescription className="text">
+              </S.Booked>{" "}
+              <S.Booked className="text"> to </S.Booked>{" "}
+              <S.Booked className="header">
                 {dateFormat(booking.dateTo, "mmmm dS, yyyy")}
-              </S.VenueDescription>
+              </S.Booked>
               <S.BottomCard>
                 <S.VenuePrice className="text">
                   ${booking.venue.price}/night
