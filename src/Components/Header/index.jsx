@@ -25,6 +25,7 @@ export default function Header() {
       <S.Header>
         <S.Left>
           <Link to="/">
+            Home
             <Homeicon />
           </Link>
         </S.Left>
@@ -35,6 +36,7 @@ export default function Header() {
         </S.Middle>
         <S.Right>
           <Link to="../../Pages/Bookings">
+            Bookings
             <Calendaricon />
           </Link>
           <S.Button onClick={onClickedLogin}>
