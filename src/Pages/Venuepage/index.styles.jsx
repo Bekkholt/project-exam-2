@@ -11,7 +11,7 @@ export const CardDiv = styled.div`
   opacity: 90%;
   width: 70vh;
   padding: 2%;
-  margin: 5%;
+  margin-top: 10%;
   border-radius: 1em;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
 `;
