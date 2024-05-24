@@ -1,6 +1,6 @@
 import FetchMyProfile from "../../Hooks/MyProfileAPI";
 import * as S from "./index.styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -16,6 +16,7 @@ export default function UpdateProfile() {
   const name = localStorage.getItem("name");
   const ProfileUrl = `https://v2.api.noroff.dev/holidaze/profiles/${name}`;
   const profile = FetchMyProfile(ProfileUrl);
+  const navigate = useNavigate();
 
   const { register } = useForm({
     resolver: yupResolver(schema),
@@ -56,6 +57,7 @@ export default function UpdateProfile() {
       console.log(json);
       if (response.status === 200) {
         alert(`Profile updated`);
+        navigate("../../Pages/Profilepage");
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }

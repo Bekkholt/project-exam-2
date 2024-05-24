@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import * as S from "./index.styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const URL = "https://v2.api.noroff.dev/holidaze/venues";
 
@@ -24,6 +24,8 @@ const schema = yup.object({
 });
 
 export default function CreateVenue() {
+  const navigate = useNavigate();
+
   const { register } = useForm({
     resolver: yupResolver(schema),
   });
@@ -89,6 +91,7 @@ export default function CreateVenue() {
       console.log(json);
       if (response.status === 201) {
         alert(`Venue posted`);
+        navigate("../../Pages/Bookings");
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
