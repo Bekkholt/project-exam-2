@@ -65,14 +65,9 @@ export const InsertManager = styled.input`
   margin-top: 3%;
 `;
 
-export const VenueDescription = styled.p`
-  color: #f29c6b;
-  padding-left: 5%;
-`;
-
 export const Text = styled.p`
   color: #f29c6b;
-  margin: 2px;
+  padding-left: 5%;
 `;
 
 export const Button = styled.button`

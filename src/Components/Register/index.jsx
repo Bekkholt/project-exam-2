@@ -108,7 +108,7 @@ export default function CreateAccount() {
           />
           <S.CheckboxDiv>
             <S.InsertManager type="checkbox" {...register("venueManager")} />
-            <S.VenueDescription>I am a venue manager</S.VenueDescription>
+            <S.Text>I am a venue manager</S.Text>
           </S.CheckboxDiv>
           <S.ButtonDiv>
             <S.Button className="text" type="submit">
