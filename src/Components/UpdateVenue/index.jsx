@@ -102,7 +102,8 @@ export default function UpdateVenue() {
     }
   }
 
-  async function deleteVenue() {
+  async function deleteVenue(e) {
+    e.preventDefault();
     try {
       const AccessToken = localStorage.getItem("accessToken");
       const Key = localStorage.getItem("key");
