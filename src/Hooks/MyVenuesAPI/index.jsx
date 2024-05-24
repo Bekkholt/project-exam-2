@@ -22,7 +22,6 @@ export default function FetchMyVenues(url) {
         };
         const response = await fetch(url, data);
         const json = await response.json();
-        console.log(json);
         setVenues(json.data);
       } catch (error) {
         console.log(error);

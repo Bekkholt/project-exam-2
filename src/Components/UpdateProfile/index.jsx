@@ -52,16 +52,13 @@ export default function UpdateProfile() {
         body: JSON.stringify(Details),
       };
       const response = await fetch(ProfileUrl, data);
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       if (response.status === 200) {
         alert(`Profile updated`);
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
     } catch (e) {
-      console.log({ e });
       alert(e.errors.join("\n"));
     }
   }

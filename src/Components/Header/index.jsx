@@ -10,13 +10,10 @@ export default function Header() {
 
   function onClickedLogin() {
     const name = localStorage.getItem("name");
-    console.log({ name });
     if (!name) {
-      console.log("navigating to loginPage with name " + name);
       navigate("../../Pages/Loginpage");
       return;
     }
-    console.log("navigating to ProfilePage with name " + name);
     navigate("../../Pages/ProfilePage");
   }
 

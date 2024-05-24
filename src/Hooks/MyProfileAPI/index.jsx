@@ -22,7 +22,6 @@ export default function FetchMyProfile(url) {
         };
         const response = await fetch(url, data);
         const json = await response.json();
-        console.log(json);
         setProfile(json.data);
       } catch (error) {
         console.log(error);

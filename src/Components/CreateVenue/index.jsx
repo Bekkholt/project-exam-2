@@ -85,16 +85,13 @@ export default function CreateVenue() {
         body: JSON.stringify(Details),
       };
       const response = await fetch(URL, data);
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       if (response.status === 201) {
         alert(`Venue posted`);
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
     } catch (e) {
-      console.log({ e });
       alert(e.errors.join("\n"));
     }
   }

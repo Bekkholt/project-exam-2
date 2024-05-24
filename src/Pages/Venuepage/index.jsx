@@ -31,7 +31,6 @@ export default function Venuepage() {
   }, [id]);
 
   if (isLoading) {
-    console.log("loading");
     return (
       <S.Wrapper>
         <S.CardDiv>
@@ -73,7 +72,6 @@ export default function Venuepage() {
 
   async function makeBooking(e) {
     e.preventDefault();
-    console.log(chosenDates);
 
     if (chosenDates === null) {
       alert("Choose dates first.");
@@ -100,9 +98,7 @@ export default function Venuepage() {
         body: JSON.stringify(inputs),
       };
       const response = await fetch(URL, data);
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       if (response.status === 201) {
         alert(`You have booked your chosen dates`);
       } else {

@@ -12,7 +12,6 @@ export default function Login() {
 
   async function userLogin(e) {
     e.preventDefault();
-    console.log(e);
 
     const inputs = {
       email: e.target[0].value,
@@ -29,11 +28,9 @@ export default function Login() {
       };
       const response = await fetch(URL, data);
       if (response.status === 200) {
-        console.log(response);
         const json = await response.json();
         localStorage.setItem("accessToken", json.data.accessToken);
         localStorage.setItem("name", json.data.name);
-        console.log(json);
         const APIKeyData = {
           method: "POST",
           headers: {
@@ -42,12 +39,9 @@ export default function Login() {
           },
           body: JSON.stringify({ name: "The key" }),
         };
-        console.log(json.data.accessToken);
-        console.log(APIKeyData);
+
         const APIKeyResponse = await fetch(APIkeyUrl, APIKeyData);
-        console.log(APIKeyResponse);
         const APIjson = await APIKeyResponse.json();
-        console.log(APIjson);
         if (APIKeyResponse.status === 201) {
           localStorage.setItem("key", APIjson.data.key);
           navigate("/");

@@ -38,8 +38,6 @@ export default function CreateAccount() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(e.target);
-
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -49,7 +47,6 @@ export default function CreateAccount() {
 
     try {
       const errors = await schema.validate(formData);
-      console.log({ errors });
 
       const Details = {
         name: formData.name,
@@ -57,8 +54,6 @@ export default function CreateAccount() {
         password: formData.password,
         venueManager: formData.venueManager,
       };
-
-      console.log(JSON.stringify(Details));
 
       const data = {
         method: "POST",
@@ -68,16 +63,13 @@ export default function CreateAccount() {
         body: JSON.stringify(formData),
       };
       const response = await fetch(URL, data);
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       if (response.status === 201) {
         alert(`Account created`);
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
     } catch (e) {
-      console.log({ e });
       alert(e.errors.join("\n"));
     }
   }

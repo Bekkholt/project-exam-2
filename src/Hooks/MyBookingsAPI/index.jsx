@@ -22,7 +22,6 @@ export default function FetchMyBookings(url) {
         };
         const response = await fetch(url, data);
         const json = await response.json();
-        console.log(json);
         setBookings(json.data.bookings);
       } catch (error) {
         console.log(error);
