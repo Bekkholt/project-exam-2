@@ -16,10 +16,6 @@ export const VenueCard = styled.div`
   }
 `;
 
-export const VenueRating = styled.p`
-  color: #f29c6b;
-`;
-
 export const Title = styled.h1`
   color: #f29c6b;
   padding-left: 5%;
