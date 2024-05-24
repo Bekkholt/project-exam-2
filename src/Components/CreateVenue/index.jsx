@@ -152,7 +152,7 @@ export default function CreateVenue() {
             <S.Button className="header" type="submit">
               Publish venue
             </S.Button>
-            <Link to={"../../Pages/Profilepage"}>
+            <Link to={"../../Pages/Bookings"}>
               <S.Button className="header">Go back</S.Button>
             </Link>
           </S.InsertDiv>
