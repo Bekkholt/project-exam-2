@@ -70,7 +70,7 @@ export default function UpdateProfile() {
 
   return (
     <S.Wrapper>
-      <S.VenueCard key={profile.profile.id} onSubmit={handleSubmit}>
+      <S.UpdateForm key={profile.profile.id} onSubmit={handleSubmit}>
         <S.TopCard>
           <S.Title className="header">Update profile</S.Title>
         </S.TopCard>
@@ -94,10 +94,9 @@ export default function UpdateProfile() {
               defaultChecked={profile.profile.venueManager}
               {...register("venueManager")}
             />
-            <S.VenueDescription>I am a venue manager</S.VenueDescription>
+            <S.Text>I am a venue manager</S.Text>
           </S.CheckboxDiv>
         </S.InsertDiv>
-        <S.VenueDescription className="text"></S.VenueDescription>
         <S.BottomCard>
           <S.InsertDiv>
             <S.Button className="header" type="submit">
@@ -108,7 +107,7 @@ export default function UpdateProfile() {
             </Link>
           </S.InsertDiv>
         </S.BottomCard>
-      </S.VenueCard>
+      </S.UpdateForm>
     </S.Wrapper>
   );
 }
