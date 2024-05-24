@@ -60,7 +60,7 @@ export const ButtonDiv = styled.div`
   justify-content: center;
 `;
 
-export const BackButton = styled.button`
+export const Button = styled.button`
   background-color: #f29c6b;
   border-radius: 0.5rem;
   width: 10rem;

@@ -110,17 +110,17 @@ export default function Venuepage() {
     }
   }
 
-  function BackButton() {
+  function BookButton() {
     if (localStorage.getItem("accessToken") !== null) {
       return (
-        <S.BackButton className="header" onClick={makeBooking}>
+        <S.Button className="header" onClick={makeBooking}>
           Book chosen dates
-        </S.BackButton>
+        </S.Button>
       );
     } else {
       return (
         <Link to={"../../Pages/Loginpage"}>
-          <S.BackButton className="header">Login to book</S.BackButton>
+          <S.Button className="header">Login to book</S.Button>
         </Link>
       );
     }
@@ -156,7 +156,12 @@ export default function Venuepage() {
           />
         </S.Middlediv>
         <S.Price className="text">${venueDetails.price}/night</S.Price>
-        <S.ButtonDiv>{BackButton()}</S.ButtonDiv>
+        <S.ButtonDiv className="header">{BookButton()}</S.ButtonDiv>
+        <S.ButtonDiv>
+          <Link to={"/"}>
+            <S.Button className="header">Go back</S.Button>
+          </Link>
+        </S.ButtonDiv>
       </S.CardDiv>
     </S.Wrapper>
   );
