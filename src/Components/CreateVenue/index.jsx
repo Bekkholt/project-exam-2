@@ -131,19 +131,19 @@ export default function CreateVenue() {
         <S.InsertDiv>
           <S.CheckboxDiv>
             <S.Insert type="checkbox" {...register("wifi")} />
-            <S.GeneralText>Wifi</S.GeneralText>
+            <S.Text>Wifi</S.Text>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
             <S.Insert type="checkbox" {...register("parking")} />
-            <S.GeneralText>Parking</S.GeneralText>
+            <S.Text>Parking</S.Text>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
             <S.Insert type="checkbox" {...register("breakfast")} />
-            <S.GeneralText>Breakfast</S.GeneralText>
+            <S.Text>Breakfast</S.Text>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
             <S.Insert type="checkbox" {...register("pets")} />
-            <S.GeneralText>Pets</S.GeneralText>
+            <S.Text>Pets</S.Text>
           </S.CheckboxDiv>
         </S.InsertDiv>
         <S.BottomCard>

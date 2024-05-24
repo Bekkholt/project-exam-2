@@ -26,7 +26,7 @@ export const Title = styled.h1`
   color: #f29c6b;
 `;
 
-export const GeneralText = styled.p`
+export const Text = styled.p`
   color: #f29c6b;
   padding-left: 5%;
 `;
