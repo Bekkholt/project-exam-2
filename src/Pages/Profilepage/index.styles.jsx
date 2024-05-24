@@ -20,39 +20,18 @@ export const TopCard = styled.div`
   display: flex;
 `;
 
-export const VenueImage = styled.img`
+export const Avatar = styled.img`
   max-width: 50%;
   max-height: 30%;
 `;
 
-export const VenueTitle = styled.h1`
+export const ProfileName = styled.h1`
   color: #f29c6b;
 `;
 
-export const VenueDescription = styled.p`
+export const Text = styled.p`
   color: #f29c6b;
   margin-left: 2%;
-`;
-
-export const VenueAdress = styled.p`
-  color: #f29c6b;
-`;
-
-export const Middlediv = styled.div`
-  display: flex;
-  margin-top: 3vh;
-  justify-content: space-between;
-`;
-
-export const VenueMeta = styled.p`
-  color: #f29c6b;
-`;
-
-export const Price = styled.p`
-  color: #f29c6b;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 3vh;
 `;
 
 export const ButtonDiv = styled.div`

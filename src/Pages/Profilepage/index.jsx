@@ -46,23 +46,19 @@ export default function ProfilePage() {
     return (
       <>
         <S.TopCard>
-          <S.VenueImage
+          <S.Avatar
             alt={profile.avatar.alt}
             src={profile.avatar.url}
-          ></S.VenueImage>
-          <S.VenueDescription className="text">
-            {profile.bio}
-          </S.VenueDescription>
+          ></S.Avatar>
+          <S.Text className="text">{profile.bio}</S.Text>
         </S.TopCard>
-        <S.VenueTitle className="header">{profile.name}</S.VenueTitle>
-        <S.VenueDescription>
-          <Link to={"../../Pages/Updateprofilepage"}>
-            <S.BackButton className="text">Update profile</S.BackButton>
-          </Link>
-        </S.VenueDescription>
-        <S.VenueDescription>
+        <S.ProfileName className="header">{profile.name}</S.ProfileName>
+        <Link to={"../../Pages/Updateprofilepage"}>
+          <S.BackButton className="text">Update profile</S.BackButton>
+        </Link>
+        <div>
           <Manager />
-        </S.VenueDescription>
+        </div>
         <S.ButtonDiv>
           <Logout />
         </S.ButtonDiv>
