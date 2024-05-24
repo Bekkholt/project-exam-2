@@ -45,7 +45,7 @@ export default function VenueList() {
   }
   return (
     <div>
-      <S.ProductWrapper>
+      <S.Wrapper>
         <Spinner />
         {allVenues.map((venue) => (
           <Venues
@@ -58,12 +58,12 @@ export default function VenueList() {
             location={venue.location}
           />
         ))}
-      </S.ProductWrapper>
-      <S.ProductWrapper>
+      </S.Wrapper>
+      <S.Wrapper>
         <S.Button className="text" onClick={LoadMore}>
           See more venues
         </S.Button>
-      </S.ProductWrapper>
+      </S.Wrapper>
     </div>
   );
 }
