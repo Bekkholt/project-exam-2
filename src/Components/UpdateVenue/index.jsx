@@ -1,5 +1,5 @@
 import * as S from "./index.styles";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import FetchMyVenue from "../../Hooks/SpecificVenueAPI";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -26,6 +26,7 @@ export default function UpdateVenue() {
   let { id } = useParams();
   const venuesUrl = `https://v2.api.noroff.dev/holidaze/venues/${id}`;
   const venue = FetchMyVenue(venuesUrl);
+  const navigate = useNavigate();
 
   const { register } = useForm({
     resolver: yupResolver(schema),
@@ -88,16 +89,13 @@ export default function UpdateVenue() {
         body: JSON.stringify(Details),
       };
       const response = await fetch(venuesUrl, data);
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       if (response.status === 200) {
         alert(`Venue updated`);
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
     } catch (e) {
-      console.log({ e });
       alert(e.errors.join("\n"));
     }
   }
@@ -117,8 +115,10 @@ export default function UpdateVenue() {
       };
       const response = await fetch(venuesUrl, data);
 
-      if (response.status === 200) {
+      if (response.status === 204) {
         alert(`Venue deleted`);
+        navigate("../../Pages/Bookings");
+        return <></>;
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
@@ -131,7 +131,7 @@ export default function UpdateVenue() {
 
   return (
     <S.Wrapper>
-      <S.VenueCard key={venue.venue.id} onSubmit={handleSubmit}>
+      <S.UpdateForm key={venue.venue.id} onSubmit={handleSubmit}>
         <S.TopCard>
           <S.Title className="header">Update venue</S.Title>
         </S.TopCard>
@@ -186,7 +186,6 @@ export default function UpdateVenue() {
             {...register("guests")}
           />
         </S.InsertDiv>
-        <S.VenueDescription className="text"></S.VenueDescription>
         <S.InsertDiv>
           <S.CheckboxDiv>
             <S.Insert
@@ -194,7 +193,7 @@ export default function UpdateVenue() {
               defaultChecked={venue.venue.meta.wifi}
               {...register("wifi")}
             />
-            <S.VenueDescription>Wifi</S.VenueDescription>
+            <S.Text>Wifi</S.Text>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
             <S.Insert
@@ -202,7 +201,7 @@ export default function UpdateVenue() {
               defaultChecked={venue.venue.meta.parking}
               {...register("parking")}
             />
-            <S.VenueDescription>Parking</S.VenueDescription>
+            <S.Text>Parking</S.Text>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
             <S.Insert
@@ -210,7 +209,7 @@ export default function UpdateVenue() {
               defaultChecked={venue.venue.meta.breakfast}
               {...register("breakfast")}
             />
-            <S.VenueDescription>Breakfast</S.VenueDescription>
+            <S.Text>Breakfast</S.Text>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
             <S.Insert
@@ -218,7 +217,7 @@ export default function UpdateVenue() {
               defaultChecked={venue.venue.meta.pets}
               {...register("pets")}
             />
-            <S.VenueDescription>Pets</S.VenueDescription>
+            <S.Text>Pets</S.Text>
           </S.CheckboxDiv>
         </S.InsertDiv>
         <S.BottomCard>
@@ -234,7 +233,7 @@ export default function UpdateVenue() {
             </Link>
           </S.InsertDiv>
         </S.BottomCard>
-      </S.VenueCard>
+      </S.UpdateForm>
     </S.Wrapper>
   );
 }
