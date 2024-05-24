@@ -38,6 +38,8 @@ export default function CreateAccount() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    console.log(e.target);
+
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -47,6 +49,7 @@ export default function CreateAccount() {
 
     try {
       const errors = await schema.validate(formData);
+      console.log({ errors });
 
       const Details = {
         name: formData.name,
@@ -54,6 +57,8 @@ export default function CreateAccount() {
         password: formData.password,
         venueManager: formData.venueManager,
       };
+
+      console.log(JSON.stringify(Details));
 
       const data = {
         method: "POST",
