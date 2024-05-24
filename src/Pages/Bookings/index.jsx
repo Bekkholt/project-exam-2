@@ -13,7 +13,7 @@ export default function Bookings() {
     return (
       <S.CardDiv>
         <S.Card>
-          <S.GeneralText>You have to log in to see your bookings</S.GeneralText>
+          <S.Text>You have to log in to see your bookings</S.Text>
           <Link to="../../Pages/Loginpage">
             <S.Button className="header">Go to login</S.Button>
           </Link>
@@ -32,16 +32,16 @@ export default function Bookings() {
 
   if (bookings.isError === true || venues.isError === true) {
     return (
-      <S.ProductWrapper>
+      <S.Wrapper>
         <S.VenueCard>
-          <S.VenueDescription>
+          <S.GeneralText>
             You have to log in to see your bookings and venues
-          </S.VenueDescription>
+          </S.GeneralText>
           <Link to="../../Pages/Loginpage">
             <S.Button className="header">Go to login</S.Button>
           </Link>
         </S.VenueCard>
-      </S.ProductWrapper>
+      </S.Wrapper>
     );
   }
 
@@ -63,12 +63,12 @@ export default function Bookings() {
                     <S.VenueImage src={venue.media[0].url} />
                   </S.TopCard>
                   <S.Title className="header">{venue.name}</S.Title>
-                  <S.VenueDescription className="text">
+                  <S.GeneralText className="text">
                     {venue.location.city}, {venue.location.country}
-                  </S.VenueDescription>
-                  <S.VenueDescription className="text">
+                  </S.GeneralText>
+                  <S.GeneralText className="text">
                     {venue.description}
-                  </S.VenueDescription>
+                  </S.GeneralText>
                   <S.BottomCard>
                     <S.VenuePrice className="text">
                       ${venue.price}/night
@@ -95,7 +95,7 @@ export default function Bookings() {
   function Spinner() {
     if (bookings.isLoading === true || venues.isLoading === true) {
       return (
-        <S.ProductWrapper>
+        <S.Wrapper>
           <BounceLoader
             loading={bookings.isLoading || venues.isLoading}
             size={30}
@@ -103,7 +103,7 @@ export default function Bookings() {
             data-testid="loader"
             color="#f29c6b"
           />
-        </S.ProductWrapper>
+        </S.Wrapper>
       );
     } else {
       return <></>;
@@ -122,12 +122,12 @@ export default function Bookings() {
                 <S.VenueImage src={booking.venue.media[0].url} />
               </S.TopCard>
               <S.Title className="header">{booking.venue.name}</S.Title>
-              <S.VenueDescription className="text">
+              <S.GeneralText className="text">
                 {booking.venue.location.city}, {booking.venue.location.country}
-              </S.VenueDescription>
-              <S.VenueDescription className="text">
+              </S.GeneralText>
+              <S.GeneralText className="text">
                 {booking.venue.description}
-              </S.VenueDescription>
+              </S.GeneralText>
               <S.Booked className="text">Booked dates: </S.Booked>
               <S.Booked className="header">
                 {dateFormat(booking.dateFrom, "mmmm dS, yyyy")}{" "}

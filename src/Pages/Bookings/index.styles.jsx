@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProductWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -22,23 +22,6 @@ export const OuterDiv = styled.div`
   justify-content: center;
 `;
 
-export const ProfileDiv = styled.div`
-  background-color: #172625d8;
-  margin-top: 10%;
-  border-radius: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50vh;
-  height: 70vh;
-  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 20%);
-`;
-
-export const Text = styled.p`
-  color: #f29c6b;
-`;
-
 export const Card = styled.div`
   background-color: #172625;
   width: 55vh;
@@ -51,7 +34,7 @@ export const Card = styled.div`
   align-items: center;
 `;
 
-export const GeneralText = styled.p`
+export const Text = styled.p`
   color: #f29c6b;
   display: flex;
   justify-content: center;
@@ -89,7 +72,7 @@ export const VenueImage = styled.img`
   height: 280px;
 `;
 
-export const VenueDescription = styled.p`
+export const GeneralText = styled.p`
   color: #f29c6b;
   padding-left: 5%;
   padding-right: 5%;
