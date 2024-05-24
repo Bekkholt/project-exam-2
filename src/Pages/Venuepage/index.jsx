@@ -1,6 +1,6 @@
 import * as S from "./index.styles";
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import MyBookingCalendar from "../../Components/Calendar";
 import { BounceLoader } from "react-spinners";
 
@@ -10,6 +10,7 @@ export default function Venuepage() {
   const [venueDetails, setVenueDetails] = useState(null);
   const [chosenDates, setChosenDates] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   let { id } = useParams();
 
@@ -102,6 +103,7 @@ export default function Venuepage() {
       console.log(json);
       if (response.status === 201) {
         alert(`You have booked your chosen dates`);
+        navigate("/");
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
