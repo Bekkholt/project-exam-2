@@ -101,7 +101,7 @@ export default function CreateVenue() {
 
   return (
     <S.Wrapper>
-      <S.VenueCard onSubmit={handleSubmit}>
+      <S.VenueForm onSubmit={handleSubmit}>
         <S.TopCard>
           <S.Title className="header">Create venue</S.Title>
         </S.TopCard>
@@ -128,23 +128,22 @@ export default function CreateVenue() {
             type="number"
           />
         </S.InsertDiv>
-        <S.VenueDescription className="text"></S.VenueDescription>
         <S.InsertDiv>
           <S.CheckboxDiv>
             <S.Insert type="checkbox" {...register("wifi")} />
-            <S.VenueDescription>Wifi</S.VenueDescription>
+            <S.GeneralText>Wifi</S.GeneralText>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
             <S.Insert type="checkbox" {...register("parking")} />
-            <S.VenueDescription>Parking</S.VenueDescription>
+            <S.GeneralText>Parking</S.GeneralText>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
             <S.Insert type="checkbox" {...register("breakfast")} />
-            <S.VenueDescription>Breakfast</S.VenueDescription>
+            <S.GeneralText>Breakfast</S.GeneralText>
           </S.CheckboxDiv>
           <S.CheckboxDiv>
             <S.Insert type="checkbox" {...register("pets")} />
-            <S.VenueDescription>Pets</S.VenueDescription>
+            <S.GeneralText>Pets</S.GeneralText>
           </S.CheckboxDiv>
         </S.InsertDiv>
         <S.BottomCard>
@@ -157,7 +156,7 @@ export default function CreateVenue() {
             </Link>
           </S.InsertDiv>
         </S.BottomCard>
-      </S.VenueCard>
+      </S.VenueForm>
     </S.Wrapper>
   );
 }
