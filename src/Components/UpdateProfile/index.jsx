@@ -53,6 +53,7 @@ export default function UpdateProfile() {
       };
       const response = await fetch(ProfileUrl, data);
       const json = await response.json();
+      console.log(json);
       if (response.status === 200) {
         alert(`Profile updated`);
       } else {

@@ -64,6 +64,7 @@ export default function CreateAccount() {
       };
       const response = await fetch(URL, data);
       const json = await response.json();
+      console.log(json);
       if (response.status === 201) {
         alert(`Account created`);
       } else {

@@ -90,6 +90,7 @@ export default function UpdateVenue() {
       };
       const response = await fetch(venuesUrl, data);
       const json = await response.json();
+      console.log(json);
       if (response.status === 200) {
         alert(`Venue updated`);
       } else {
