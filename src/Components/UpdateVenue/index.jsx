@@ -93,6 +93,7 @@ export default function UpdateVenue() {
       console.log(json);
       if (response.status === 200) {
         alert(`Venue updated`);
+        navigate("../../Pages/Bookings");
       } else {
         alert(`Something went wrong. Statuscode: ` + response.status);
       }
