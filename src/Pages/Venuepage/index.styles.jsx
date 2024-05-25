@@ -27,6 +27,7 @@ export const VenueImage = styled.img`
 
 export const VenueTitle = styled.h1`
   color: #f29c6b;
+  overflow: overlay;
 `;
 
 export const VenueDescription = styled.p`
