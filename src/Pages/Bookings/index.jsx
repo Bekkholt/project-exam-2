@@ -25,7 +25,7 @@ export default function Bookings() {
   const name = localStorage.getItem("name");
   const bookingsUrl = `https://v2.api.noroff.dev/holidaze/profiles/${name}?_bookings=true`;
   const bookings = FetchMyBookings(bookingsUrl);
-  const venuesUrl = `https://v2.api.noroff.dev/holidaze/profiles/${name}/venues`;
+  const venuesUrl = `https://v2.api.noroff.dev/holidaze/profiles/${name}/venues?_bookings=true&_owner=true`;
   const venues = FetchMyVenues(venuesUrl);
   const profileUrl = `https://v2.api.noroff.dev/holidaze/profiles/${name}`;
   const profile = FetchMyProfile(profileUrl);
@@ -42,6 +42,23 @@ export default function Bookings() {
           </Link>
         </S.VenueCard>
       </S.Wrapper>
+    );
+  }
+
+  console.log(venues);
+
+  function DisplayBooking(booking) {
+    return (
+      <S.BottomCard>
+        <S.Booked className="text">Name: {booking.customer.name}</S.Booked>
+        <S.Booked className="text">Guests: {booking.guests}</S.Booked>
+        <S.Booked className="text">
+          From: {dateFormat(booking.dateFrom, "mmmm dS, yyyy")}
+        </S.Booked>
+        <S.Booked className="text">
+          To: {dateFormat(booking.dateTo, "mmmm dS, yyyy")}
+        </S.Booked>
+      </S.BottomCard>
     );
   }
 
@@ -73,11 +90,11 @@ export default function Bookings() {
                     <S.VenuePrice className="text">
                       ${venue.price}/night
                     </S.VenuePrice>
-                    <S.Booked className="header">Current bookings:</S.Booked>
-                    <S.Booked className="header">
-                      {venue._count.bookings}
-                    </S.Booked>
                   </S.BottomCard>
+                  <S.Title className="header">Venue bookings:</S.Title>
+                  {venue.bookings.map((booking) => {
+                    return DisplayBooking(booking);
+                  })}
                 </Link>
                 <Link to={`../../Pages/Updatevenuepage/${venue.id}`}>
                   <S.UpdateButton className="text">Update venue</S.UpdateButton>
