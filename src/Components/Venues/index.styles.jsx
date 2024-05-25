@@ -18,7 +18,9 @@ export const VenueCard = styled.div`
 
 export const Title = styled.h1`
   color: #f29c6b;
-  padding-left: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  overflow: overlay;
 `;
 
 export const VenueImage = styled.img`
