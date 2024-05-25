@@ -45,11 +45,9 @@ export default function Bookings() {
     );
   }
 
-  console.log(venues);
-
   function DisplayBooking(booking) {
     return (
-      <S.BottomCard>
+      <S.BottomCard key={booking.id}>
         <S.Booked className="text">Name: {booking.customer.name}</S.Booked>
         <S.Booked className="text">Guests: {booking.guests}</S.Booked>
         <S.Booked className="text">
