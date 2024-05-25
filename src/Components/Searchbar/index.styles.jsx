@@ -22,8 +22,9 @@ export const SearchItems = styled.div`
 `;
 
 export const SearchResults = styled.p`
-  padding: 2%;
+  margin: 10px;
   width: 30vh;
   cursor: pointer;
   color: black;
+  overflow: hidden;
 `;
